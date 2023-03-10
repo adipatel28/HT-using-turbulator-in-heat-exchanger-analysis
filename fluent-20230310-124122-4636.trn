@@ -1,0 +1,2264 @@
+Auto-Transcript Start Time:  12:41:22, 10 Mar 2023 India Standard Time 
+Current Directory: "C:\Documents\Practice\Prsnl\Heat exchanger\Heat Transfer Enhancement Using a Turbulator"
+
+              Welcome to ANSYS Fluent 2022 R2
+
+              Copyright 1987-2022 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 27 2022 08:52:29 EDT  Build Id: 10212  
+ 
+Connected License Server List:	
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "Aditya" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    Vendor                          
+-------------------------------------------------------------------------------
+n0    Aditya    1/4  Windows-x64  16404  Intel(R) Core(TM) i7-4510U      
+host  Aditya         Windows-x64  10584  Intel(R) Core(TM) i7-4510U      
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is C:\\Documents\\Practice\\Prsnl\\Heat exchanger\\Heat Transfer Enhancement Using a Turbulator\\cleanup-fluent-Aditya-10584.bat
+Multicore SMT processors detected. Processor affinity set!
+Reading "\"| gunzip -c \\"C:/Documents/Practice/Prsnl/Heat exchanger/Heat Transfer Enhancement Using a Turbulator/mesh-tube-with-turbulator.msh.gz\\"\""...
+Buffering for file scan...
+
+  479391 nodes, binary.
+   14064 nodes, binary.
+ 1479290 mixed interior faces, zone  1, binary.
+    3800 quadrilateral wall faces, zone  2, binary.
+    9200 quadrilateral wall faces, zone  6, binary.
+    2510 mixed velocity-inlet faces, zone  7, binary.
+    2510 mixed pressure-outlet faces, zone  8, binary.
+  502000 mixed cells, zone  5, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	wall-turbulator-shadow
+	outlet
+	inlet
+	wall-tube
+	fluid
+	wall-turbulator
+	interior-fluid
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+
+> (cx-gui-do cx-activate-item "ToolBar*Pointer*rotate")
+(cx-use-window-id 51)
+(cx-set-camera-relative '(-0.521236 -3.15059 -1.11309) '(0 0 0) '(1.16154 -0.626692 1.24559) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(0.104 0.046546 -0.0743895) '(0 0 0) '(0.0213604 0.0469015 -0.0262509) 0 0)
+(cx-use-window-id 51)
+(build-popup-menu)
+(cx-gui-do cx-activate-item "MenuBar*DisplaySubMenu*Mesh...")
+(cx-gui-do cx-set-toggle-button2 "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)" #t)
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)")
+(cx-gui-do cx-set-list-selections "Mesh Display*Table1*Frame3*List1(Surfaces)" '( 1 2 3 4))
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame3*List1(Surfaces)")
+(cx-gui-do cx-set-list-selections "Mesh Display*Table1*Frame3*List1(Surfaces)" '( 2 3 4))
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame3*List1(Surfaces)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Mesh)*PushButton4(Check)")
+(cx-gui-do cx-activate-item "MenuBar*PopupMenuCheck*Perform Mesh Check")
+
+ Domain Extents:
+   x-coordinate: min (m) = -1.500000e-02, max (m) = 1.500000e-02
+   y-coordinate: min (m) = 7.500000e-01, max (m) = 1.500000e+00
+   z-coordinate: min (m) = -1.500000e-02, max (m) = 1.500000e-02
+ Volume statistics:
+   minimum volume (m3): 6.560193e-11
+   maximum volume (m3): 1.666250e-08
+     total volume (m3): 5.256736e-04
+ Face area statistics:
+   minimum face area (m2): 1.767256e-08
+   maximum face area (m2): 1.397135e-05
+ Checking mesh............................
+Done.
+
+Note: Settings to improve the robustness of pathline and
+      particle tracking have been automatically enabled.
+
+ (cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Mesh)*PushButton5(  Quality)")
+(cx-gui-do cx-activate-item "MenuBar*PopupMenuQuality*Evaluate Mesh Quality")
+
+Mesh Quality:
+
+Minimum Orthogonal Quality =  1.47474e-01 cell 147929 on zone 5 (ID: 466997 on partition: 0) at location ( 6.90456e-03,  1.48690e+00, -1.32062e-02)
+
+Maximum Aspect Ratio =  5.00780e+02 cell 57404 on zone 5 (ID: 463074 on partition: 0) at location ( 1.19084e-02,  1.02562e+00, -7.30023e-03)
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame3(Physics)*Table1*Table3(Solver)*PushButton2(Operating Conditions)")
+(cx-gui-do cx-activate-item "Operating Conditions*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-set-toggle-button2 "Ribbon*Frame1*Frame3(Physics)*Table1*Table3(Models)*CheckButton1(Energy)" #t)
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame3(Physics)*Table1*Table3(Models)*CheckButton1(Energy)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame3(Physics)*Table1*Table3(Models)*PushButton4(Viscous)")
+(cx-gui-do cx-activate-item "Viscous Model*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame3(Physics)*Table1*Table3(Materials)*PushButton1(Create/Edit)")
+(cx-gui-do cx-activate-item "Create/Edit Materials*Table1*Frame1*Frame2*ButtonBox2*PushButton1(Fluent Database)")
+(cx-gui-do cx-set-list-selections "Fluent Database Materials*Table1*Frame1*List1(Materials)" '( 5))
+(cx-gui-do cx-activate-item "Fluent Database Materials*Table1*Frame1*List1(Materials)")
+(cx-gui-do cx-set-list-selections "Fluent Database Materials*Table1*Frame1*List1(Materials)" '( 5 565))
+(cx-gui-do cx-activate-item "Fluent Database Materials*Table1*Frame1*List1(Materials)")
+(cx-gui-do cx-activate-item "Fluent Database Materials*PanelButtons*PushButton6(Copy)")
+(cx-gui-do cx-activate-item "Fluent Database Materials*PanelButtons*PushButton1(Close)")
+(cx-gui-do cx-activate-item "Create/Edit Materials*PanelButtons*PushButton1(Close)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame3(Physics)*Table1*Table3(Zones)*PushButton1(Cell Zones)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame3(Physics)*Table1*Table3(Materials)*PushButton1(Create/Edit)")
+(cx-gui-do cx-activate-item "Create/Edit Materials*PanelButtons*PushButton1(Close)")
+(cx-gui-do cx-set-list-selections "Boundary Conditions*Table1*List2(Zone)" '( 0))
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*List2(Zone)")
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 1)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 3)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 4)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 5)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 6)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 7)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 8)
+(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)
+(cx-gui-do cx-set-list-selections "Fluid*Frame2*Table1*Table1*DropDownList1(Material Name)" '( 0))
+(cx-gui-do cx-enable-apply-button "Fluid")
+(cx-gui-do cx-activate-item "Fluid*Frame2*Table1*Table1*DropDownList1(Material Name)")
+(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame3(Physics)*Table1*Table3(Zones)*PushButton2(Boundaries)")
+(cx-gui-do cx-set-list-selections "Boundary Conditions*Table1*List2(Zone)" '( 0))
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*List2(Zone)")
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 1)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 2)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 3)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 4)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 5)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 6)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 7)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 8)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-item "Velocity Inlet*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-selections "Boundary Conditions*Table1*Table3*DropDownList2(Type)" '( 5))
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*DropDownList2(Type)")
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 1)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 2)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 3)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 4)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 5)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 6)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 7)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 8)
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-item "Mass-Flow Inlet*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")
+(cx-gui-do cx-enable-apply-button "Mass-Flow Inlet")
+(cx-gui-do cx-set-expression-entry "Mass-Flow Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table8*ExpressionEntry1(Mass Flow Rate)" '("0.15" . 0))
+(cx-gui-do cx-set-list-selections "Mass-Flow Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table3(Turbulence)*DropDownList1(Specification Method)" '( 3))
+(cx-gui-do cx-activate-item "Mass-Flow Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table3(Turbulence)*DropDownList1(Specification Method)")
+(cx-gui-do cx-set-expression-entry "Mass-Flow Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table3(Turbulence)*ExpressionEntry11(Hydraulic Diameter)" '("0.03" . 0))
+(cx-gui-do cx-set-expression-entry "Mass-Flow Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table3(Turbulence)*ExpressionEntry9(Turbulent Intensity)" '("0.05" . 0))
+(cx-gui-do cx-activate-item "Mass-Flow Inlet*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 1)
+(cx-gui-do cx-enable-apply-button "Mass-Flow Inlet")
+(cx-gui-do cx-set-expression-entry "Mass-Flow Inlet*Frame2*Frame2*Frame2(Thermal)*Table1*Table1*ExpressionEntry1(Total Temperature)" '("288" . 0))
+(cx-gui-do cx-activate-item "Mass-Flow Inlet*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-tab-index "Mass-Flow Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-item "Mass-Flow Inlet*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-selections "Boundary Conditions*Table1*List2(Zone)" '( 3))
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*List2(Zone)")
+(cx-gui-do cx-set-list-selections "Boundary Conditions*Table1*List2(Zone)" '( 2))
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*List2(Zone)")
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 1)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 2)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 3)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 4)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 5)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 6)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 7)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 8)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-set-list-selections "Pressure Outlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table3(Turbulence)*DropDownList1(Specification Method)" '( 3))
+(cx-gui-do cx-enable-apply-button "Pressure Outlet")
+(cx-gui-do cx-activate-item "Pressure Outlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table3(Turbulence)*DropDownList1(Specification Method)")
+(cx-gui-do cx-set-expression-entry "Pressure Outlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table3(Turbulence)*ExpressionEntry11(Backflow Hydraulic Diameter)" '("0.03" . 0))
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 1)
+(cx-gui-do cx-set-expression-entry "Pressure Outlet*Frame2*Frame2*Frame2(Thermal)*Table1*Table1*ExpressionEntry1(Backflow Total Temperature)" '("330" . 0))
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 1)
+(cx-gui-do cx-activate-item "Pressure Outlet*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-selections "Boundary Conditions*Table1*List2(Zone)" '( 3))
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*List2(Zone)")
+(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 1)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 2)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 3)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 4)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 5)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 6)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 7)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 8)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 9)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 10)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 1)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 2)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 3)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 4)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 5)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 1)
+(cx-gui-do cx-enable-apply-button "Wall")
+(cx-gui-do cx-set-toggle-button2 "Wall*Frame4*Frame2(Thermal)*Frame1*Frame1(Thermal Conditions)*ToggleBox1*Temperature" #t)
+(cx-gui-do cx-activate-item "Wall*Frame4*Frame2(Thermal)*Frame1*Frame1(Thermal Conditions)*ToggleBox1*Temperature")
+(cx-gui-do cx-set-expression-entry "Wall*Frame4*Frame2(Thermal)*Frame1*Frame1(Thermal Conditions)*Table3*Table1*Table1*ExpressionEntry1(Temperature)" '("373.15" . 0))
+(cx-gui-do cx-activate-item "Wall*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Wall*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame5(Solution)*Table1*Table3(Reports)*PushButton1(Residuals)")
+(cx-gui-do cx-set-real-entry-list "Residual Monitors*Table1*Table2*Table1*Table1(Equations)*RealEntry35" '( 1e-08))
+(cx-gui-do cx-activate-item "Residual Monitors*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame5(Solution)*Table1*Table3(Reports)*PushButton1(Residuals)")
+(cx-gui-do cx-activate-item "Residual Monitors*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame5(Solution)*Table1*Table3(Reports)*PushButton2(Definitions)")
+(cx-gui-do cx-activate-item "MenuBar*Surface ReportSubMenu*Mass-Weighted Average...")
+(cx-gui-do cx-set-text-entry "Surface Report Definition*Table1*Table1*TextEntry1(Name)" "outlet-tempreture-w-turb")
+(cx-gui-do cx-activate-item "Surface Report Definition*Table1*Table1*TextEntry1(Name)")
+(cx-gui-do cx-set-list-selections "Surface Report Definition*Table1*Table2*DropDownList3(Field Variable)" '( 3))
+(cx-gui-do cx-activate-item "Surface Report Definition*Table1*Table2*DropDownList3(Field Variable)")
+(cx-gui-do cx-set-list-selections "Surface Report Definition*Table1*Table2*Table6*List1(Surfaces)" '( 0))
+(cx-gui-do cx-activate-item "Surface Report Definition*Table1*Table2*Table6*List1(Surfaces)")
+(cx-gui-do cx-set-list-selections "Surface Report Definition*Table1*Table2*Table6*List1(Surfaces)" '( 0 1))
+(cx-gui-do cx-activate-item "Surface Report Definition*Table1*Table2*Table6*List1(Surfaces)")
+(cx-gui-do cx-set-list-selections "Surface Report Definition*Table1*Table2*Table6*List1(Surfaces)" '( 1))
+(cx-gui-do cx-activate-item "Surface Report Definition*Table1*Table2*Table6*List1(Surfaces)")
+(cx-gui-do cx-activate-item "Surface Report Definition*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame5(Solution)*Table1*Table3(Initialization)*PushButton5(Initialize)")
+
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		1.000000e+00
+	2		4.205819e-07
+	3		7.411712e-07
+	4		3.714088e-07
+	5		2.775922e-07
+	6		2.165000e-07
+	7		1.715183e-07
+	8		1.340776e-07
+	9		1.113318e-07
+	10		9.549559e-08
+
+Hybrid initialization is done.
+(cx-gui-do cx-set-integer-entry "Ribbon*Frame1*Frame5(Solution)*Table1*Table3(Run Calculation)*Table6*IntegerEntry16(No  of Iterations)" 500)
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame5(Solution)*Table1*Table3(Run Calculation)*Table6*IntegerEntry16(No  of Iterations)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame5(Solution)*Table1*Table3(Run Calculation)*PushButton7(Calculate)")
+
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+     1  1.0000e+00  4.0815e-03  8.8501e-03  4.0927e-03  1.8078e-05  3.3674e+00  4.2928e+03  1:31:29  499
+
+ Reversed flow on 98 faces (0.5% area) of pressure-outlet 8.
+     2  1.0000e+00  1.7618e-02  6.3677e-02  1.7679e-02  4.3696e-04  9.5951e-01  4.8838e-01  1:32:58  498
+
+ Reversed flow on 124 faces (0.5% area) of pressure-outlet 8.
+     3  7.8464e-01  8.8153e-03  3.6128e-02  8.8664e-03  4.0690e-04  9.3844e-01  4.7976e-01  1:30:47  497
+
+ Reversed flow on 51 faces (0.2% area) of pressure-outlet 8.
+     4  7.2507e-01  5.8283e-03  2.0758e-02  5.8592e-03  4.0948e-04  9.0816e-01  4.6373e-01  1:29:01  496
+
+ Reversed flow on 36 faces (0.1% area) of pressure-outlet 8.
+     5  6.9602e-01  4.3935e-03  1.2446e-02  4.4014e-03  4.1682e-04  8.6677e-01  4.3324e-01  1:25:55  495
+
+ Reversed flow on 66 faces (0.4% area) of pressure-outlet 8.
+     6  5.8846e-01  3.2568e-03  7.5936e-03  3.2536e-03  4.2885e-04  8.1092e-01  3.7791e-01  1:23:25  494
+
+ Reversed flow on 79 faces (0.5% area) of pressure-outlet 8.
+     7  5.0476e-01  2.4507e-03  5.0460e-03  2.4385e-03  4.3839e-04  7.2377e-01  2.9072e-01  1:23:02  493
+
+ Reversed flow on 81 faces (0.6% area) of pressure-outlet 8.
+     8  4.3090e-01  2.0352e-03  3.7241e-03  2.0233e-03  4.4903e-04  5.4235e-01  1.8551e-01  1:21:03  492
+
+ Reversed flow on 72 faces (0.6% area) of pressure-outlet 8.
+     9  3.7259e-01  1.8511e-03  3.1175e-03  1.8458e-03  4.5993e-04  2.6706e-01  9.6638e-02  1:19:26  491
+
+ Reversed flow on 76 faces (0.7% area) of pressure-outlet 8.
+    10  3.2627e-01  1.7743e-03  2.8494e-03  1.7748e-03  4.7142e-04  1.1437e-01  4.3090e-02  1:18:07  490
+
+ Reversed flow on 77 faces (0.7% area) of pressure-outlet 8.
+    11  2.9119e-01  1.7136e-03  2.7128e-03  1.7181e-03  4.8210e-04  7.1686e-02  1.7538e-02  1:18:40  489
+
+ Reversed flow on 81 faces (0.7% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    12  2.6569e-01  1.6436e-03  2.6030e-03  1.6497e-03  4.9290e-04  5.7468e-02  6.8284e-03  1:17:27  488
+
+ Reversed flow on 87 faces (0.8% area) of pressure-outlet 8.
+    13  2.5035e-01  1.5677e-03  2.5210e-03  1.5744e-03  5.0486e-04  4.9606e-02  2.6231e-03  1:18:04  487
+
+ Reversed flow on 92 faces (0.9% area) of pressure-outlet 8.
+    14  2.4060e-01  1.4965e-03  2.4534e-03  1.5044e-03  5.1546e-04  4.3064e-02  1.0326e-03  1:16:54  486
+
+ Reversed flow on 97 faces (1.0% area) of pressure-outlet 8.
+    15  2.3779e-01  1.4331e-03  2.3739e-03  1.4418e-03  5.2351e-04  3.7353e-02  4.4161e-04  1:15:57  485
+
+ Reversed flow on 102 faces (1.1% area) of pressure-outlet 8.
+    16  2.3283e-01  1.3855e-03  2.2982e-03  1.3943e-03  5.2930e-04  3.2587e-02  2.2578e-04  1:16:46  484
+
+ Reversed flow on 108 faces (1.2% area) of pressure-outlet 8.
+    17  2.3101e-01  1.3483e-03  2.2388e-03  1.3566e-03  5.3125e-04  2.8604e-02  1.5641e-04  1:15:46  483
+
+ Reversed flow on 112 faces (1.2% area) of pressure-outlet 8.
+    18  2.2614e-01  1.3077e-03  2.1816e-03  1.3150e-03  5.3062e-04  2.5104e-02  1.7035e-04  1:14:57  482
+
+ Reversed flow on 115 faces (1.3% area) of pressure-outlet 8.
+    19  2.2434e-01  1.2425e-03  2.1019e-03  1.2491e-03  5.2731e-04  2.2124e-02  2.5075e-04  1:14:16  481
+
+ Reversed flow on 120 faces (1.4% area) of pressure-outlet 8.
+    20  2.1593e-01  1.1648e-03  2.0068e-03  1.1700e-03  5.1871e-04  1.9739e-02  2.4326e-04  1:15:18  480
+
+ Reversed flow on 122 faces (1.5% area) of pressure-outlet 8.
+    21  2.0550e-01  1.0829e-03  1.9122e-03  1.0849e-03  5.0661e-04  1.7813e-02  3.2346e-04  1:14:29  479
+
+ Reversed flow on 123 faces (1.5% area) of pressure-outlet 8.
+    22  1.9332e-01  9.9929e-04  1.7964e-03  1.0018e-03  4.9360e-04  1.6300e-02  2.2324e-04  1:13:48  478
+
+ Reversed flow on 126 faces (1.6% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    23  1.8207e-01  9.2034e-04  1.6837e-03  9.2039e-04  4.7828e-04  1.5078e-02  2.3657e-04  1:13:13  477
+
+ Reversed flow on 127 faces (1.6% area) of pressure-outlet 8.
+    24  1.6998e-01  8.5774e-04  1.5843e-03  8.5482e-04  4.6199e-04  1.4060e-02  2.2398e-04  1:12:44  476
+
+ Reversed flow on 129 faces (1.7% area) of pressure-outlet 8.
+    25  1.6014e-01  8.1886e-04  1.5184e-03  8.1645e-04  4.4588e-04  1.3176e-02  1.8126e-04  1:13:54  475
+
+ Reversed flow on 131 faces (1.6% area) of pressure-outlet 8.
+    26  1.5266e-01  8.0594e-04  1.4965e-03  8.0361e-04  4.2790e-04  1.2364e-02  1.4806e-04  1:13:13  474
+
+ Reversed flow on 135 faces (1.8% area) of pressure-outlet 8.
+    27  1.4998e-01  8.1460e-04  1.5032e-03  8.1037e-04  4.0415e-04  1.1617e-02  1.4133e-04  1:14:13  473
+
+ Reversed flow on 135 faces (1.7% area) of pressure-outlet 8.
+    28  1.4979e-01  8.2809e-04  1.5052e-03  8.2412e-04  3.7810e-04  1.0952e-02  1.2862e-04  1:13:24  472
+
+ Reversed flow on 136 faces (1.8% area) of pressure-outlet 8.
+    29  1.5049e-01  8.3142e-04  1.4899e-03  8.2773e-04  3.5103e-04  1.0370e-02  1.2771e-04  1:14:18  471
+
+ Reversed flow on 135 faces (1.7% area) of pressure-outlet 8.
+    30  1.5190e-01  8.2250e-04  1.4517e-03  8.1918e-04  3.2498e-04  9.8589e-03  1.2203e-04  1:13:25  470
+
+ Reversed flow on 134 faces (1.7% area) of pressure-outlet 8.
+    31  1.5192e-01  8.0402e-04  1.3968e-03  8.0030e-04  3.0007e-04  9.4456e-03  1.2148e-04  1:12:41  469
+
+ Reversed flow on 132 faces (1.6% area) of pressure-outlet 8.
+    32  1.5120e-01  7.7906e-04  1.3360e-03  7.7313e-04  2.7631e-04  9.1259e-03  1.2022e-04  1:13:37  468
+
+ Reversed flow on 129 faces (1.6% area) of pressure-outlet 8.
+    33  1.4872e-01  7.5142e-04  1.2835e-03  7.4613e-04  2.5447e-04  8.8491e-03  1.1308e-04  1:12:47  467
+
+ Reversed flow on 127 faces (1.5% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    34  1.4465e-01  7.2717e-04  1.2304e-03  7.2155e-04  2.3396e-04  8.6031e-03  1.1510e-04  1:13:38  466
+
+ Reversed flow on 123 faces (1.5% area) of pressure-outlet 8.
+    35  1.3914e-01  7.0114e-04  1.1811e-03  6.9724e-04  2.1508e-04  8.3270e-03  1.0943e-04  1:12:44  465
+
+ Reversed flow on 119 faces (1.4% area) of pressure-outlet 8.
+    36  1.3322e-01  6.7324e-04  1.1343e-03  6.7095e-04  1.9798e-04  8.0408e-03  1.0950e-04  1:11:59  464
+
+ Reversed flow on 117 faces (1.4% area) of pressure-outlet 8.
+    37  1.2810e-01  6.4798e-04  1.0936e-03  6.4719e-04  1.8187e-04  7.7629e-03  1.0751e-04  1:12:53  463
+
+ Reversed flow on 116 faces (1.4% area) of pressure-outlet 8.
+    38  1.2386e-01  6.2947e-04  1.0604e-03  6.2745e-04  1.6755e-04  7.5137e-03  1.0108e-04  1:12:03  462
+
+ Reversed flow on 114 faces (1.3% area) of pressure-outlet 8.
+    39  1.2096e-01  6.1723e-04  1.0320e-03  6.1376e-04  1.5546e-04  7.2899e-03  1.0511e-04  1:11:21  461
+
+ Reversed flow on 111 faces (1.2% area) of pressure-outlet 8.
+    40  1.1833e-01  6.1112e-04  1.0074e-03  6.0629e-04  1.4522e-04  7.0777e-03  1.0495e-04  1:12:17  460
+
+ Reversed flow on 107 faces (1.2% area) of pressure-outlet 8.
+    41  1.1627e-01  6.0639e-04  9.8856e-04  6.0229e-04  1.3586e-04  6.8608e-03  9.8756e-05  1:11:28  459
+
+ Reversed flow on 105 faces (1.2% area) of pressure-outlet 8.
+    42  1.1486e-01  6.0163e-04  9.7183e-04  5.9949e-04  1.2710e-04  6.6485e-03  9.0940e-05  1:10:48  458
+
+ Reversed flow on 104 faces (1.2% area) of pressure-outlet 8.
+    43  1.1423e-01  5.9597e-04  9.5609e-04  5.9694e-04  1.1891e-04  6.4174e-03  1.0641e-04  1:11:45  457
+
+ Reversed flow on 103 faces (1.1% area) of pressure-outlet 8.
+    44  1.1352e-01  5.8832e-04  9.3501e-04  5.9068e-04  1.1191e-04  6.1912e-03  9.6334e-05  1:10:57  456
+
+ Reversed flow on 101 faces (1.1% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    45  1.1231e-01  5.7745e-04  9.0789e-04  5.8127e-04  1.0609e-04  5.9829e-03  8.7211e-05  1:16:21  455
+
+ Reversed flow on 101 faces (1.1% area) of pressure-outlet 8.
+    46  1.1023e-01  5.6547e-04  8.7896e-04  5.6965e-04  1.0111e-04  5.7664e-03  9.3659e-05  1:19:06  454
+
+ Reversed flow on 104 faces (1.1% area) of pressure-outlet 8.
+    47  1.0809e-01  5.5273e-04  8.5003e-04  5.5553e-04  9.6681e-05  5.5451e-03  8.4954e-05  1:21:16  453
+
+ Reversed flow on 104 faces (1.1% area) of pressure-outlet 8.
+    48  1.0558e-01  5.3777e-04  8.2105e-04  5.3964e-04  9.3097e-05  5.3148e-03  8.1885e-05  1:21:27  452
+
+ Reversed flow on 104 faces (1.1% area) of pressure-outlet 8.
+    49  1.0241e-01  5.2119e-04  7.9631e-04  5.2142e-04  9.0251e-05  5.0935e-03  8.0475e-05  1:18:32  451
+
+ Reversed flow on 106 faces (1.1% area) of pressure-outlet 8.
+    50  9.8626e-02  5.0347e-04  7.7487e-04  5.0263e-04  8.8325e-05  4.8941e-03  7.9257e-05  1:16:12  450
+
+ Reversed flow on 109 faces (1.2% area) of pressure-outlet 8.
+    51  9.4519e-02  4.8772e-04  7.5787e-04  4.8561e-04  8.6582e-05  4.7252e-03  7.8030e-05  1:15:47  449
+
+ Reversed flow on 108 faces (1.2% area) of pressure-outlet 8.
+    52  9.0894e-02  4.7545e-04  7.4529e-04  4.7251e-04  8.4661e-05  4.5832e-03  7.8471e-05  1:13:56  448
+
+ Reversed flow on 108 faces (1.1% area) of pressure-outlet 8.
+    53  8.8036e-02  4.6599e-04  7.3501e-04  4.6381e-04  8.2528e-05  4.4480e-03  7.8761e-05  1:12:25  447
+
+ Reversed flow on 108 faces (1.1% area) of pressure-outlet 8.
+    54  8.6093e-02  4.5739e-04  7.2268e-04  4.5607e-04  8.0188e-05  4.3162e-03  7.8033e-05  1:12:41  446
+
+ Reversed flow on 109 faces (1.2% area) of pressure-outlet 8.
+    55  8.5073e-02  4.4848e-04  7.1019e-04  4.4779e-04  7.8096e-05  4.2089e-03  7.7392e-05  1:11:22  445
+
+ Reversed flow on 108 faces (1.2% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    56  8.3718e-02  4.3927e-04  6.9664e-04  4.3991e-04  7.6666e-05  4.1012e-03  7.8277e-05  1:10:17  444
+
+ Reversed flow on 109 faces (1.2% area) of pressure-outlet 8.
+    57  8.2098e-02  4.3095e-04  6.8432e-04  4.3323e-04  7.5634e-05  3.9959e-03  7.6751e-05  1:09:23  443
+
+ Reversed flow on 110 faces (1.2% area) of pressure-outlet 8.
+    58  8.0679e-02  4.2418e-04  6.7403e-04  4.2647e-04  7.4231e-05  3.8967e-03  7.4918e-05  1:10:07  442
+
+ Reversed flow on 109 faces (1.2% area) of pressure-outlet 8.
+    59  7.9621e-02  4.1754e-04  6.6321e-04  4.1934e-04  7.2745e-05  3.8010e-03  7.3926e-05  1:09:12  441
+
+ Reversed flow on 108 faces (1.2% area) of pressure-outlet 8.
+    60  7.8714e-02  4.1073e-04  6.5172e-04  4.1210e-04  7.1322e-05  3.7067e-03  7.3099e-05  1:09:54  440
+
+ Reversed flow on 110 faces (1.2% area) of pressure-outlet 8.
+    61  7.7928e-02  4.0438e-04  6.3946e-04  4.0487e-04  7.0067e-05  3.6169e-03  7.1937e-05  1:08:58  439
+
+ Reversed flow on 109 faces (1.2% area) of pressure-outlet 8.
+    62  7.6791e-02  3.9625e-04  6.2578e-04  3.9747e-04  6.8436e-05  3.5251e-03  7.0646e-05  1:08:11  438
+
+ Reversed flow on 109 faces (1.2% area) of pressure-outlet 8.
+    63  7.6051e-02  3.8707e-04  6.1173e-04  3.8848e-04  6.6955e-05  3.4259e-03  7.1559e-05  1:07:32  437
+
+ Reversed flow on 109 faces (1.2% area) of pressure-outlet 8.
+    64  7.4715e-02  3.7684e-04  5.9809e-04  3.7959e-04  6.5709e-05  3.3207e-03  6.8745e-05  1:08:26  436
+
+ Reversed flow on 108 faces (1.2% area) of pressure-outlet 8.
+    65  7.3098e-02  3.6708e-04  5.8549e-04  3.7042e-04  6.4487e-05  3.2280e-03  6.7179e-05  1:07:40  435
+
+ Reversed flow on 108 faces (1.2% area) of pressure-outlet 8.
+    66  7.1576e-02  3.5792e-04  5.7380e-04  3.6134e-04  6.2946e-05  3.1374e-03  6.5848e-05  1:07:02  434
+
+ Reversed flow on 107 faces (1.2% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    67  7.0457e-02  3.5029e-04  5.6277e-04  3.5279e-04  6.1271e-05  3.0485e-03  6.4469e-05  1:07:56  433
+
+ Reversed flow on 107 faces (1.2% area) of pressure-outlet 8.
+    68  6.9233e-02  3.4358e-04  5.5112e-04  3.4452e-04  5.9876e-05  2.9639e-03  6.2948e-05  1:07:11  432
+
+ Reversed flow on 106 faces (1.2% area) of pressure-outlet 8.
+    69  6.8206e-02  3.3718e-04  5.4021e-04  3.3709e-04  5.8867e-05  2.8861e-03  6.1299e-05  1:06:33  431
+
+ Reversed flow on 106 faces (1.2% area) of pressure-outlet 8.
+    70  6.7095e-02  3.3242e-04  5.3164e-04  3.3211e-04  5.7933e-05  2.8273e-03  6.0022e-05  1:06:01  430
+
+ Reversed flow on 106 faces (1.2% area) of pressure-outlet 8.
+    71  6.5914e-02  3.2868e-04  5.2567e-04  3.2897e-04  5.7055e-05  2.7821e-03  5.9388e-05  1:07:00  429
+
+ Reversed flow on 106 faces (1.2% area) of pressure-outlet 8.
+    72  6.5293e-02  3.2611e-04  5.2060e-04  3.2682e-04  5.6067e-05  2.7496e-03  5.8887e-05  1:06:19  428
+
+ Reversed flow on 104 faces (1.1% area) of pressure-outlet 8.
+    73  6.5337e-02  3.2422e-04  5.1651e-04  3.2413e-04  5.5080e-05  2.7168e-03  5.8176e-05  1:07:09  427
+
+ Reversed flow on 104 faces (1.1% area) of pressure-outlet 8.
+    74  6.5624e-02  3.2171e-04  5.1126e-04  3.2063e-04  5.4162e-05  2.6940e-03  5.7290e-05  1:06:23  426
+
+ Reversed flow on 103 faces (1.1% area) of pressure-outlet 8.
+    75  6.5525e-02  3.1914e-04  5.0491e-04  3.1656e-04  5.3341e-05  2.6681e-03  5.6327e-05  1:05:44  425
+
+ Reversed flow on 104 faces (1.1% area) of pressure-outlet 8.
+    76  6.4590e-02  3.1501e-04  4.9791e-04  3.1226e-04  5.2657e-05  2.6367e-03  5.5462e-05  1:05:11  424
+
+ Reversed flow on 103 faces (1.1% area) of pressure-outlet 8.
+    77  6.3498e-02  3.0932e-04  4.9054e-04  3.0732e-04  5.1722e-05  2.5966e-03  5.4703e-05  1:04:43  423
+
+ Reversed flow on 103 faces (1.1% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    78  6.2917e-02  3.0360e-04  4.8224e-04  3.0187e-04  5.0621e-05  2.5514e-03  5.3859e-05  1:05:43  422
+
+ Reversed flow on 102 faces (1.0% area) of pressure-outlet 8.
+    79  6.2004e-02  2.9853e-04  4.7302e-04  2.9562e-04  4.9158e-05  2.4997e-03  5.3035e-05  1:05:05  421
+
+ Reversed flow on 103 faces (1.1% area) of pressure-outlet 8.
+    80  6.0742e-02  2.9355e-04  4.6219e-04  2.8876e-04  4.7387e-05  2.4401e-03  5.2346e-05  1:04:32  420
+
+ Reversed flow on 103 faces (1.1% area) of pressure-outlet 8.
+    81  5.9244e-02  2.8702e-04  4.4845e-04  2.8116e-04  4.5587e-05  2.3682e-03  5.1635e-05  1:04:05  419
+
+ Reversed flow on 103 faces (1.1% area) of pressure-outlet 8.
+    82  5.7716e-02  2.7918e-04  4.3395e-04  2.7308e-04  4.3666e-05  2.2994e-03  5.0672e-05  1:05:04  418
+
+ Reversed flow on 102 faces (1.0% area) of pressure-outlet 8.
+    83  5.6159e-02  2.7042e-04  4.1890e-04  2.6493e-04  4.1748e-05  2.2190e-03  4.9402e-05  1:04:27  417
+
+ Reversed flow on 101 faces (1.0% area) of pressure-outlet 8.
+    84  5.4380e-02  2.6034e-04  4.0217e-04  2.5658e-04  3.9926e-05  2.1347e-03  4.7964e-05  1:05:18  416
+
+ Reversed flow on 101 faces (1.0% area) of pressure-outlet 8.
+    85  5.2457e-02  2.4984e-04  3.8551e-04  2.4788e-04  3.8108e-05  2.0557e-03  4.6226e-05  1:05:57  415
+
+ Reversed flow on 100 faces (1.0% area) of pressure-outlet 8.
+    86  5.0192e-02  2.3968e-04  3.6902e-04  2.3865e-04  3.6476e-05  1.9872e-03  4.4566e-05  1:05:03  414
+
+ Reversed flow on 100 faces (1.0% area) of pressure-outlet 8.
+    87  4.7734e-02  2.3023e-04  3.5336e-04  2.2941e-04  3.4975e-05  1.9245e-03  4.3031e-05  1:04:18  413
+
+ Reversed flow on 100 faces (1.0% area) of pressure-outlet 8.
+    88  4.5584e-02  2.2153e-04  3.4029e-04  2.1999e-04  3.3530e-05  1.8622e-03  4.1566e-05  1:05:03  412
+
+ Reversed flow on 97 faces (1.0% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    89  4.4316e-02  2.1295e-04  3.2881e-04  2.1080e-04  3.2029e-05  1.8062e-03  4.0324e-05  1:04:15  411
+
+ Reversed flow on 97 faces (1.0% area) of pressure-outlet 8.
+    90  4.2941e-02  2.0466e-04  3.1706e-04  2.0241e-04  3.0608e-05  1.7525e-03  3.9077e-05  1:03:34  410
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+    91  4.1651e-02  1.9715e-04  3.0541e-04  1.9429e-04  2.9420e-05  1.6968e-03  3.7950e-05  1:03:00  409
+
+ Reversed flow on 92 faces (1.0% area) of pressure-outlet 8.
+    92  4.0352e-02  1.8992e-04  2.9393e-04  1.8598e-04  2.8365e-05  1.6422e-03  3.6890e-05  1:03:53  408
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+    93  3.9193e-02  1.8269e-04  2.8390e-04  1.7873e-04  2.7395e-05  1.5916e-03  3.5689e-05  1:03:11  407
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+    94  3.8268e-02  1.7601e-04  2.7481e-04  1.7290e-04  2.6641e-05  1.5425e-03  3.4499e-05  1:02:36  406
+
+ Reversed flow on 89 faces (0.9% area) of pressure-outlet 8.
+    95  3.6981e-02  1.6979e-04  2.6676e-04  1.6812e-04  2.6133e-05  1.4976e-03  3.3369e-05  1:03:28  405
+
+ Reversed flow on 88 faces (0.9% area) of pressure-outlet 8.
+    96  3.5521e-02  1.6486e-04  2.5965e-04  1.6458e-04  2.5666e-05  1.4600e-03  3.2229e-05  1:02:46  404
+
+ Reversed flow on 88 faces (0.9% area) of pressure-outlet 8.
+    97  3.4330e-02  1.6068e-04  2.5333e-04  1.6133e-04  2.5189e-05  1.4266e-03  3.1160e-05  1:02:11  403
+
+ Reversed flow on 87 faces (0.9% area) of pressure-outlet 8.
+    98  3.3470e-02  1.5738e-04  2.4801e-04  1.5821e-04  2.4641e-05  1.3943e-03  3.0239e-05  1:01:41  402
+
+ Reversed flow on 87 faces (0.9% area) of pressure-outlet 8.
+    99  3.2758e-02  1.5491e-04  2.4272e-04  1.5506e-04  2.4127e-05  1.3596e-03  2.9350e-05  1:01:15  401
+
+ Reversed flow on 87 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   100  3.1937e-02  1.5284e-04  2.3731e-04  1.5130e-04  2.3726e-05  1.3238e-03  2.8687e-05  1:00:53  400
+
+ Reversed flow on 86 faces (0.9% area) of pressure-outlet 8.
+   101  3.1273e-02  1.5042e-04  2.3227e-04  1.4826e-04  2.3288e-05  1.2900e-03  2.8155e-05  1:01:53  399
+
+ Reversed flow on 87 faces (0.9% area) of pressure-outlet 8.
+   102  3.0716e-02  1.4720e-04  2.2778e-04  1.4595e-04  2.2799e-05  1.2555e-03  2.7742e-05  1:01:19  398
+
+ Reversed flow on 88 faces (0.9% area) of pressure-outlet 8.
+   103  3.0170e-02  1.4432e-04  2.2377e-04  1.4364e-04  2.2414e-05  1.2209e-03  2.7421e-05  1:00:51  397
+
+ Reversed flow on 88 faces (0.9% area) of pressure-outlet 8.
+   104  2.9671e-02  1.4173e-04  2.1995e-04  1.4115e-04  2.2132e-05  1.1920e-03  2.7104e-05  1:01:45  396
+
+ Reversed flow on 88 faces (0.9% area) of pressure-outlet 8.
+   105  2.9347e-02  1.3883e-04  2.1630e-04  1.3854e-04  2.1821e-05  1.1696e-03  2.6773e-05  1:01:08  395
+
+ Reversed flow on 88 faces (0.9% area) of pressure-outlet 8.
+   106  2.8822e-02  1.3578e-04  2.1282e-04  1.3590e-04  2.1306e-05  1.1478e-03  2.6554e-05  1:01:55  394
+
+ Reversed flow on 88 faces (0.9% area) of pressure-outlet 8.
+   107  2.7939e-02  1.3285e-04  2.0913e-04  1.3308e-04  2.0544e-05  1.1211e-03  2.6203e-05  1:01:12  393
+
+ Reversed flow on 88 faces (0.9% area) of pressure-outlet 8.
+   108  2.7115e-02  1.2955e-04  2.0349e-04  1.2978e-04  1.9693e-05  1.0876e-03  2.5657e-05  1:03:12  392
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   109  2.6505e-02  1.2549e-04  1.9718e-04  1.2578e-04  1.8947e-05  1.0529e-03  2.5014e-05  1:02:10  391
+
+ Reversed flow on 92 faces (1.0% area) of pressure-outlet 8.
+   110  2.6099e-02  1.2090e-04  1.9105e-04  1.2178e-04  1.8277e-05  1.0187e-03  2.4402e-05  1:01:18  390
+
+ Reversed flow on 92 faces (1.0% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   111  2.5617e-02  1.1645e-04  1.8480e-04  1.1762e-04  1.7649e-05  9.8750e-04  2.3845e-05  1:01:53  389
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   112  2.4982e-02  1.1193e-04  1.7885e-04  1.1320e-04  1.7052e-05  9.5731e-04  2.3296e-05  1:01:01  388
+
+ Reversed flow on 96 faces (1.0% area) of pressure-outlet 8.
+   113  2.4239e-02  1.0759e-04  1.7313e-04  1.0877e-04  1.6462e-05  9.2600e-04  2.2699e-05  1:00:18  387
+
+ Reversed flow on 97 faces (1.1% area) of pressure-outlet 8.
+   114  2.3412e-02  1.0351e-04  1.6738e-04  1.0459e-04  1.5847e-05  8.9519e-04  2.1983e-05  1:00:59  386
+
+ Reversed flow on 98 faces (1.1% area) of pressure-outlet 8.
+   115  2.2615e-02  9.9526e-05  1.6166e-04  1.0073e-04  1.5133e-05  8.6511e-04  2.1326e-05  1:00:13  385
+
+ Reversed flow on 98 faces (1.1% area) of pressure-outlet 8.
+   116  2.2003e-02  9.5656e-05  1.5562e-04  9.6923e-05  1.4421e-05  8.3869e-04  2.0515e-05  0:59:34  384
+
+ Reversed flow on 99 faces (1.1% area) of pressure-outlet 8.
+   117  2.1502e-02  9.2233e-05  1.4933e-04  9.3104e-05  1.3762e-05  8.1552e-04  1.9524e-05  0:59:01  383
+
+ Reversed flow on 98 faces (1.1% area) of pressure-outlet 8.
+   118  2.0978e-02  8.9091e-05  1.4344e-04  8.9549e-05  1.3207e-05  7.9309e-04  1.8595e-05  0:59:49  382
+
+ Reversed flow on 98 faces (1.1% area) of pressure-outlet 8.
+   119  2.0478e-02  8.6303e-05  1.3824e-04  8.6264e-05  1.2730e-05  7.7141e-04  1.7705e-05  0:59:10  381
+
+ Reversed flow on 98 faces (1.1% area) of pressure-outlet 8.
+   120  2.0014e-02  8.3724e-05  1.3351e-04  8.3241e-05  1.2278e-05  7.5075e-04  1.6888e-05  0:58:36  380
+
+ Reversed flow on 97 faces (1.1% area) of pressure-outlet 8.
+   121  1.9545e-02  8.1305e-05  1.2937e-04  8.0709e-05  1.1863e-05  7.3335e-04  1.6194e-05  0:59:24  379
+
+ Reversed flow on 97 faces (1.1% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   122  1.9127e-02  7.8991e-05  1.2567e-04  7.8796e-05  1.1463e-05  7.1517e-04  1.5516e-05  0:58:44  378
+
+ Reversed flow on 96 faces (1.0% area) of pressure-outlet 8.
+   123  1.8768e-02  7.6826e-05  1.2225e-04  7.7125e-05  1.1082e-05  6.9675e-04  1.4917e-05  0:58:10  377
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+   124  1.8415e-02  7.4636e-05  1.1859e-04  7.5440e-05  1.0713e-05  6.7746e-04  1.4376e-05  0:57:42  376
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   125  1.8063e-02  7.2463e-05  1.1488e-04  7.3504e-05  1.0364e-05  6.5835e-04  1.3922e-05  0:58:32  375
+
+ Reversed flow on 92 faces (1.0% area) of pressure-outlet 8.
+   126  1.7723e-02  7.0364e-05  1.1140e-04  7.1275e-05  1.0087e-05  6.3975e-04  1.3514e-05  0:57:55  374
+
+ Reversed flow on 91 faces (1.0% area) of pressure-outlet 8.
+   127  1.7336e-02  6.8465e-05  1.0831e-04  6.8896e-05  9.8455e-06  6.2398e-04  1.3126e-05  0:57:24  373
+
+ Reversed flow on 90 faces (1.0% area) of pressure-outlet 8.
+   128  1.6916e-02  6.6654e-05  1.0577e-04  6.6552e-05  9.6602e-06  6.0871e-04  1.2808e-05  0:56:58  372
+
+ Reversed flow on 89 faces (1.0% area) of pressure-outlet 8.
+   129  1.6523e-02  6.5079e-05  1.0365e-04  6.4432e-05  9.5035e-06  5.9415e-04  1.2557e-05 19:43:11  371
+
+ Reversed flow on 89 faces (1.0% area) of pressure-outlet 8.
+   130  1.6158e-02  6.3625e-05  1.0183e-04  6.2535e-05  9.3687e-06  5.8182e-04  1.2311e-05 16:00:01  370
+
+ Reversed flow on 89 faces (1.0% area) of pressure-outlet 8.
+   131  1.5845e-02  6.2394e-05  1.0024e-04  6.0938e-05  9.1944e-06  5.6929e-04  1.2039e-05 12:55:47  369
+
+ Reversed flow on 90 faces (1.0% area) of pressure-outlet 8.
+   132  1.5478e-02  6.1244e-05  9.8530e-05  5.9334e-05  8.9439e-06  5.5526e-04  1.1719e-05 10:28:46  368
+
+ Reversed flow on 90 faces (1.0% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   133  1.5089e-02  5.9866e-05  9.6375e-05  5.7605e-05  8.6408e-06  5.3840e-04  1.1417e-05  8:30:12  367
+
+ Reversed flow on 89 faces (1.0% area) of pressure-outlet 8.
+   134  1.4794e-02  5.8269e-05  9.3656e-05  5.5763e-05  8.3152e-06  5.1972e-04  1.1124e-05  6:55:35  366
+
+ Reversed flow on 89 faces (1.0% area) of pressure-outlet 8.
+   135  1.4478e-02  5.6446e-05  9.0732e-05  5.4002e-05  7.9729e-06  5.0151e-04  1.0848e-05  5:40:05  365
+
+ Reversed flow on 89 faces (1.0% area) of pressure-outlet 8.
+   136  1.4065e-02  5.4430e-05  8.7735e-05  5.2364e-05  7.6258e-06  4.8448e-04  1.0546e-05  4:39:49  364
+
+ Reversed flow on 89 faces (1.0% area) of pressure-outlet 8.
+   137  1.3610e-02  5.2255e-05  8.4612e-05  5.0880e-05  7.3233e-06  4.6797e-04  1.0235e-05  3:51:42  363
+
+ Reversed flow on 90 faces (1.0% area) of pressure-outlet 8.
+   138  1.3100e-02  4.9977e-05  8.1501e-05  4.9496e-05  7.0981e-06  4.5188e-04  9.9545e-06  3:13:18  362
+
+ Reversed flow on 90 faces (1.0% area) of pressure-outlet 8.
+   139  1.2602e-02  4.7878e-05  7.8584e-05  4.8117e-05  6.9012e-06  4.3775e-04  9.6888e-06  2:41:26  361
+
+ Reversed flow on 90 faces (1.0% area) of pressure-outlet 8.
+   140  1.2102e-02  4.5945e-05  7.5858e-05  4.6636e-05  6.7459e-06  4.2489e-04  9.4346e-06  2:17:11  360
+
+ Reversed flow on 90 faces (1.0% area) of pressure-outlet 8.
+   141  1.1643e-02  4.4201e-05  7.3409e-05  4.5145e-05  6.6022e-06  4.1303e-04  9.2593e-06  1:57:49  359
+
+ Reversed flow on 91 faces (1.0% area) of pressure-outlet 8.
+   142  1.1285e-02  4.2572e-05  7.1356e-05  4.3655e-05  6.4657e-06  4.0162e-04  9.1066e-06  1:41:09  358
+
+ Reversed flow on 91 faces (1.0% area) of pressure-outlet 8.
+   143  1.0997e-02  4.1107e-05  6.9713e-05  4.2283e-05  6.3539e-06  3.9157e-04  8.8814e-06  1:29:02  357
+
+ Reversed flow on 91 faces (1.0% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   144  1.0736e-02  3.9827e-05  6.8484e-05  4.1107e-05  6.2793e-06  3.8302e-04  8.6115e-06  1:20:31  356
+
+ Reversed flow on 91 faces (1.0% area) of pressure-outlet 8.
+   145  1.0454e-02  3.8784e-05  6.7354e-05  4.0182e-05  6.2552e-06  3.7537e-04  8.3087e-06  1:12:31  355
+
+ Reversed flow on 92 faces (1.0% area) of pressure-outlet 8.
+   146  1.0213e-02  3.8045e-05  6.6443e-05  3.9540e-05  6.2401e-06  3.7005e-04  8.0154e-06  1:06:07  354
+
+ Reversed flow on 92 faces (1.0% area) of pressure-outlet 8.
+   147  9.9078e-03  3.7630e-05  6.5801e-05  3.9206e-05  6.1833e-06  3.6500e-04  7.7669e-06  0:59:48  353
+
+ Reversed flow on 92 faces (1.0% area) of pressure-outlet 8.
+   148  9.6586e-03  3.7329e-05  6.5162e-05  3.8865e-05  6.0715e-06  3.5938e-04  7.5442e-06  0:55:55  352
+
+ Reversed flow on 92 faces (1.0% area) of pressure-outlet 8.
+   149  9.4536e-03  3.7068e-05  6.4535e-05  3.8264e-05  5.9160e-06  3.5399e-04  7.3790e-06  0:51:38  351
+
+ Reversed flow on 92 faces (1.0% area) of pressure-outlet 8.
+   150  9.2690e-03  3.6789e-05  6.3758e-05  3.7556e-05  5.7333e-06  3.4969e-04  7.2274e-06  0:49:21  350
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   151  9.1303e-03  3.6490e-05  6.2889e-05  3.6808e-05  5.5544e-06  3.4480e-04  7.0840e-06  0:47:31  349
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   152  9.0384e-03  3.6016e-05  6.1773e-05  3.6145e-05  5.3714e-06  3.3853e-04  6.9494e-06  0:46:01  348
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   153  8.9691e-03  3.5371e-05  6.0594e-05  3.5512e-05  5.1893e-06  3.3177e-04  6.8007e-06  0:44:48  347
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   154  8.8822e-03  3.4610e-05  5.9252e-05  3.4909e-05  5.0288e-06  3.2288e-04  6.6317e-06  0:44:58  346
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   155  8.7380e-03  3.3801e-05  5.7906e-05  3.4251e-05  4.8847e-06  3.1285e-04  6.4341e-06  0:46:13  345
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   156  8.6071e-03  3.2964e-05  5.6492e-05  3.3471e-05  4.7390e-06  3.0234e-04  6.2129e-06  0:46:03  344
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   157  8.4606e-03  3.2136e-05  5.5008e-05  3.2575e-05  4.5841e-06  2.9167e-04  6.0234e-06  0:47:01  343
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   158  8.2978e-03  3.1300e-05  5.3345e-05  3.1625e-05  4.4323e-06  2.8104e-04  5.8511e-06  0:45:29  342
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+   159  8.1527e-03  3.0396e-05  5.1651e-05  3.0655e-05  4.2915e-06  2.7063e-04  5.7017e-06  0:43:06  341
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+   160  7.9917e-03  2.9467e-05  5.0068e-05  2.9709e-05  4.1553e-06  2.6006e-04  5.5676e-06  0:42:19  340
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+   161  7.8366e-03  2.8537e-05  4.8624e-05  2.8823e-05  4.0294e-06  2.4984e-04  5.4668e-06  0:41:40  339
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+   162  7.6694e-03  2.7709e-05  4.7320e-05  2.8016e-05  3.9175e-06  2.4029e-04  5.3855e-06  0:41:07  338
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+   163  7.5011e-03  2.6972e-05  4.6238e-05  2.7249e-05  3.8167e-06  2.3107e-04  5.3299e-06  0:40:40  337
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+   164  7.3442e-03  2.6349e-05  4.5298e-05  2.6557e-05  3.7176e-06  2.2184e-04  5.2894e-06  0:39:09  336
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+   165  7.1631e-03  2.5753e-05  4.4358e-05  2.5922e-05  3.6149e-06  2.1240e-04  5.2422e-06  0:39:03  335
+
+ Reversed flow on 95 faces (1.0% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   166  6.9610e-03  2.5138e-05  4.3388e-05  2.5274e-05  3.4997e-06  2.0328e-04  5.1955e-06  0:38:56  334
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   167  6.7532e-03  2.4515e-05  4.2284e-05  2.4596e-05  3.3758e-06  1.9409e-04  5.1158e-06  0:38:50  333
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   168  6.5381e-03  2.3831e-05  4.0984e-05  2.3862e-05  3.2392e-06  1.8474e-04  5.0220e-06  0:37:36  332
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   169  6.3243e-03  2.3085e-05  3.9548e-05  2.3089e-05  3.1047e-06  1.7546e-04  4.8938e-06  0:37:43  331
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   170  6.1228e-03  2.2280e-05  3.8007e-05  2.2287e-05  2.9681e-06  1.6631e-04  4.7499e-06  0:37:47  330
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   171  5.8947e-03  2.1433e-05  3.6470e-05  2.1453e-05  2.8305e-06  1.5755e-04  4.5820e-06  0:41:06  329
+
+ Reversed flow on 94 faces (1.0% area) of pressure-outlet 8.
+   172  5.6715e-03  2.0573e-05  3.4926e-05  2.0589e-05  2.6973e-06  1.4945e-04  4.3911e-06  0:40:26  328
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   173  5.4378e-03  1.9710e-05  3.3391e-05  1.9746e-05  2.5651e-06  1.4196e-04  4.1950e-06  0:39:53  327
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   174  5.2270e-03  1.8854e-05  3.1864e-05  1.8898e-05  2.4293e-06  1.3506e-04  3.9880e-06  0:38:20  326
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   175  5.0289e-03  1.8027e-05  3.0410e-05  1.8104e-05  2.3069e-06  1.2885e-04  3.7892e-06  0:38:09  325
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   176  4.8564e-03  1.7265e-05  2.8991e-05  1.7379e-05  2.2035e-06  1.2329e-04  3.6090e-06  0:37:59  324
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   177  4.7167e-03  1.6594e-05  2.7687e-05  1.6681e-05  2.1046e-06  1.1820e-04  3.4568e-06  0:37:50  323
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   178  4.5735e-03  1.5973e-05  2.6464e-05  1.5991e-05  2.0071e-06  1.1326e-04  3.3242e-06  0:37:41  322
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   179  4.4196e-03  1.5325e-05  2.5314e-05  1.5303e-05  1.9108e-06  1.0839e-04  3.2038e-06  0:37:33  321
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   180  4.2572e-03  1.4636e-05  2.4139e-05  1.4614e-05  1.8176e-06  1.0350e-04  3.0908e-06  0:37:25  320
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   181  4.0772e-03  1.3916e-05  2.2927e-05  1.3887e-05  1.7231e-06  9.8246e-05  2.9673e-06  0:37:17  319
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   182  3.8608e-03  1.3157e-05  2.1639e-05  1.3104e-05  1.6246e-06  9.2932e-05  2.8289e-06  0:36:05  318
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   183  3.6333e-03  1.2374e-05  2.0338e-05  1.2316e-05  1.5253e-06  8.7557e-05  2.6716e-06  0:36:11  317
+
+ Reversed flow on 93 faces (1.0% area) of pressure-outlet 8.
+   184  3.4027e-03  1.1562e-05  1.9016e-05  1.1505e-05  1.4268e-06  8.2161e-05  2.4978e-06  0:36:13  316
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   185  3.1714e-03  1.0759e-05  1.7729e-05  1.0696e-05  1.3293e-06  7.7005e-05  2.3217e-06  0:36:14  315
+Connection to the license server has been lost for 6 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   186  2.9353e-03  9.9605e-06  1.6495e-05  9.9066e-06  1.2334e-06  7.1811e-05  2.1490e-06  0:36:13  314
+Connection to the license server has been lost for 6 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   187  2.7151e-03  9.1869e-06  1.5276e-05  9.1741e-06  1.1433e-06  6.6769e-05  1.9895e-06  0:36:11  313
+Connection to the license server has been lost for 6 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   188  2.5062e-03  8.4646e-06  1.4107e-05  8.4818e-06  1.0607e-06  6.2125e-05  1.8423e-06  0:37:11  312
+Connection to the license server has been lost for 6 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   189  2.3093e-03  7.7884e-06  1.3001e-05  7.8378e-06  9.8024e-07  5.7602e-05  1.7013e-06  0:35:52  311
+Connection to the license server has been lost for 6 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   190  2.1240e-03  7.1701e-06  1.1961e-05  7.2371e-06  9.0253e-07  5.3227e-05  1.5662e-06  0:35:50  310
+Connection to the license server has been lost for 6 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   191  1.9578e-03  6.6207e-06  1.0967e-05  6.6730e-06  8.2566e-07  4.9013e-05  1.4326e-06  0:35:47  309
+Connection to the license server has been lost for 6 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   192  1.7956e-03  6.0945e-06  1.0026e-05  6.1153e-06  7.5024e-07  4.4879e-05  1.3097e-06  0:35:43  308
+Connection to the license server has been lost for 6 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   193  1.6486e-03  5.6090e-06  9.1186e-06  5.5932e-06  6.7694e-07  4.0855e-05  1.1927e-06  0:35:39  307
+Connection to the license server has been lost for 6 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   194  1.5167e-03  5.1630e-06  8.2612e-06  5.1084e-06  6.0879e-07  3.6974e-05  1.0825e-06  0:35:34  306
+Connection to the license server has been lost for 7 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   195  1.3843e-03  4.7041e-06  7.4438e-06  4.6204e-06  5.4710e-07  3.3430e-05  9.7746e-07  0:35:29  305
+Connection to the license server has been lost for 7 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   196  1.2616e-03  4.2688e-06  6.7022e-06  4.1611e-06  4.9246e-07  3.0210e-05  8.8029e-07  0:35:23  304
+Connection to the license server has been lost for 7 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   197  1.1527e-03  3.8814e-06  6.0361e-06  3.7602e-06  4.4445e-07  2.7308e-05  7.9538e-07  0:35:17  303
+Connection to the license server has been lost for 7 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   198  1.0495e-03  3.5211e-06  5.4331e-06  3.3842e-06  4.0357e-07  2.4706e-05  7.1979e-07  0:35:11  302
+Connection to the license server has been lost for 7 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   199  9.5602e-04  3.1947e-06  4.8922e-06  3.0482e-06  3.6703e-07  2.2331e-05  6.5555e-07  0:35:04  301
+Connection to the license server has been lost for 7 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   200  8.7037e-04  2.8983e-06  4.4062e-06  2.7503e-06  3.3207e-07  2.0195e-05  5.9331e-07  0:34:58  300
+Connection to the license server has been lost for 7 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   201  7.8911e-04  2.6255e-06  3.9685e-06  2.4787e-06  3.0784e-07  1.8249e-05  5.4044e-07  0:34:51  299
+Connection to the license server has been lost for 7 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   202  7.1408e-04  2.3745e-06  3.5804e-06  2.2320e-06  2.8247e-07  1.6526e-05  4.9427e-07  0:35:44  298
+Connection to the license server has been lost for 8 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   203  6.5440e-04  2.1778e-06  3.2403e-06  2.0414e-06  2.6164e-07  1.5003e-05  4.5516e-07  0:35:25  297
+Connection to the license server has been lost for 8 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   204  5.9744e-04  1.9879e-06  2.9360e-06  1.8607e-06  2.4102e-07  1.3630e-05  4.1985e-07  0:35:09  296
+Connection to the license server has been lost for 8 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   205  5.4755e-04  1.8215e-06  2.6661e-06  1.7039e-06  2.2513e-07  1.2428e-05  3.8850e-07  0:34:55  295
+Connection to the license server has been lost for 8 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   206  5.0068e-04  1.6655e-06  2.4267e-06  1.5576e-06  2.1625e-07  1.1357e-05  3.5989e-07  0:34:42  294
+Connection to the license server has been lost for 8 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   207  4.6573e-04  1.5483e-06  2.2177e-06  1.4527e-06  2.0278e-07  1.0399e-05  3.3545e-07  0:34:30  293
+Connection to the license server has been lost for 8 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   208  4.3428e-04  1.4397e-06  2.0307e-06  1.3581e-06  1.9152e-07  9.5456e-06  3.1448e-07  0:34:19  292
+Connection to the license server has been lost for 8 minutes.
+
+ Reversed flow on 92 faces (0.9% area) of pressure-outlet 8.
+   209  4.0452e-04  1.3329e-06  1.8588e-06  1.2638e-06  1.8156e-07  8.7580e-06  2.9300e-07  0:34:09  291
+Connection to the license server has been lost for 8 minutes.
+
+ Reversed flow on 92 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   210  3.7558e-04  1.2266e-06  1.7027e-06  1.1710e-06  1.7486e-07  8.0492e-06  2.7371e-07  0:34:00  290
+Connection to the license server has been lost for 8 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   211  3.4993e-04  1.1322e-06  1.5623e-06  1.0870e-06  1.6733e-07  7.3990e-06  2.5674e-07  0:33:51  289
+Connection to the license server has been lost for 9 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   212  3.3405e-04  1.0755e-06  1.4407e-06  1.0388e-06  1.5895e-07  6.8125e-06  2.4164e-07  0:33:42  288
+Connection to the license server has been lost for 9 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   213  3.1333e-04  1.0008e-06  1.3259e-06  9.7063e-07  1.5365e-07  6.2718e-06  2.2828e-07  0:34:31  287
+Connection to the license server has been lost for 9 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   214  2.9503e-04  9.3376e-07  1.2219e-06  9.0953e-07  1.4478e-07  5.7838e-06  2.1600e-07  0:34:12  286
+Connection to the license server has been lost for 9 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   215  2.8362e-04  8.9172e-07  1.1317e-06  8.7532e-07  1.4252e-07  5.3458e-06  2.0476e-07  0:33:55  285
+Connection to the license server has been lost for 9 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   216  2.6171e-04  8.1450e-07  1.0408e-06  8.0193e-07  1.3625e-07  4.9328e-06  1.9440e-07  0:33:40  284
+Connection to the license server has been lost for 9 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   217  2.5701e-04  7.9522e-07  9.7247e-07  7.8564e-07  1.3347e-07  4.5686e-06  1.8619e-07  0:32:30  283
+Connection to the license server has been lost for 9 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   218  2.4183e-04  7.4111e-07  9.0151e-07  7.3607e-07  1.2961e-07  4.2277e-06  1.7757e-07  0:32:29  282
+Connection to the license server has been lost for 9 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   219  2.3277e-04  7.1073e-07  8.4138e-07  7.0736e-07  1.2449e-07  3.9216e-06  1.7088e-07  0:32:27  281
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   220  2.2294e-04  6.7756e-07  7.8723e-07  6.7872e-07  1.2013e-07  3.6432e-06  1.6343e-07  0:32:24  280
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   221  2.1845e-04  6.6241e-07  7.4051e-07  6.6501e-07  1.1938e-07  3.3906e-06  1.5835e-07  0:32:20  279
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   222  2.0526e-04  6.1665e-07  6.9162e-07  6.2004e-07  1.1508e-07  3.1544e-06  1.5322e-07  0:32:16  278
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   223  2.0239e-04  6.0764e-07  6.5459e-07  6.1314e-07  1.1284e-07  2.9487e-06  1.4730e-07  0:31:16  277
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   224  1.9765e-04  5.9275e-07  6.1940e-07  5.9976e-07  1.1406e-07  2.7611e-06  1.4250e-07  0:31:21  276
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   225  1.8656e-04  5.5454e-07  5.8172e-07  5.6059e-07  1.1037e-07  2.5855e-06  1.3965e-07  0:31:25  275
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   226  1.8621e-04  5.5373e-07  5.5511e-07  5.6181e-07  1.0958e-07  2.4323e-06  1.3685e-07  0:31:26  274
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   227  1.7339e-04  5.0936e-07  5.2070e-07  5.1639e-07  1.0823e-07  2.2842e-06  1.3222e-07  0:30:31  273
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   228  1.6941e-04  4.9391e-07  4.9597e-07  4.9993e-07  1.0552e-07  2.1517e-06  1.2957e-07  0:30:40  272
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   229  1.7508e-04  5.2036e-07  4.8126e-07  5.2805e-07  1.0487e-07  2.0425e-06  1.2753e-07  0:30:46  271
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   230  1.6600e-04  4.9051e-07  4.5533e-07  4.9617e-07  1.0212e-07  1.9269e-06  1.2446e-07  0:30:49  270
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   231  1.6633e-04  4.8891e-07  4.3764e-07  4.9807e-07  9.9470e-08  1.8273e-06  1.2186e-07  0:31:44  269
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   232  1.6031e-04  4.7050e-07  4.1593e-07  4.7882e-07  9.8113e-08  1.7322e-06  1.1959e-07  0:30:39  268
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 91 faces (0.9% area) of pressure-outlet 8.
+   233  1.5871e-04  4.6477e-07  3.9991e-07  4.7451e-07  9.5841e-08  1.6486e-06  1.1911e-07  0:30:40  267
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   234  1.5236e-04  4.4370e-07  3.8116e-07  4.5274e-07  9.4864e-08  1.5710e-06  1.1631e-07  0:30:39  266
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   235  1.5312e-04  4.4649e-07  3.6838e-07  4.5563e-07  9.5294e-08  1.5065e-06  1.1483e-07  0:30:37  265
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   236  1.4494e-04  4.2152e-07  3.4964e-07  4.3015e-07  9.2710e-08  1.4385e-06  1.1257e-07  0:29:40  264
+Connection to the license server has been lost for 10 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   237  1.4115e-04  4.0700e-07  3.3465e-07  4.1521e-07  9.4456e-08  1.3811e-06  1.1161e-07  0:30:40  263
+Connection to the license server has been lost for 11 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   238  1.3510e-04  3.8585e-07  3.1772e-07  3.9264e-07  9.3107e-08  1.3275e-06  1.0950e-07  0:29:41  262
+Connection to the license server has been lost for 11 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   239  1.4539e-04  4.2813e-07  3.1905e-07  4.3537e-07  9.0671e-08  1.2931e-06  1.0824e-07  0:29:44  261
+Connection to the license server has been lost for 11 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   240  1.3608e-04  3.9696e-07  3.0262e-07  4.0226e-07  9.2001e-08  1.2472e-06  1.0720e-07  0:29:46  260
+Connection to the license server has been lost for 11 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   241  1.3431e-04  3.9156e-07  2.9155e-07  3.9662e-07  9.0411e-08  1.2083e-06  1.0553e-07  0:29:46  259
+Connection to the license server has been lost for 11 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   242  1.3356e-04  3.8995e-07  2.8276e-07  3.9452e-07  8.8866e-08  1.1752e-06  1.0446e-07  0:29:44  258
+Connection to the license server has been lost for 11 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   243  1.2826e-04  3.7034e-07  2.7121e-07  3.7524e-07  8.9176e-08  1.1414e-06  1.0344e-07  0:29:42  257
+Connection to the license server has been lost for 11 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   244  1.2857e-04  3.7169e-07  2.6317e-07  3.7682e-07  8.7739e-08  1.1149e-06  1.0312e-07  0:28:47  256
+Connection to the license server has been lost for 11 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   245  1.2457e-04  3.6007e-07  2.5559e-07  3.6501e-07  8.6096e-08  1.0900e-06  1.0184e-07  0:28:53  255
+Connection to the license server has been lost for 11 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   246  1.2841e-04  3.7254e-07  2.5268e-07  3.7753e-07  8.6255e-08  1.0715e-06  1.0168e-07  0:28:57  254
+Connection to the license server has been lost for 12 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   247  1.1503e-04  3.2262e-07  2.3476e-07  3.2579e-07  8.5419e-08  1.0393e-06  1.0103e-07  0:28:58  253
+Connection to the license server has been lost for 12 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   248  1.2211e-04  3.4934e-07  2.3745e-07  3.5302e-07  8.6335e-08  1.0259e-06  9.9777e-08  0:28:58  252
+Connection to the license server has been lost for 12 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   249  1.2451e-04  3.6310e-07  2.3579e-07  3.6660e-07  8.4773e-08  1.0096e-06  9.9664e-08  0:28:06  251
+Connection to the license server has been lost for 12 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   250  1.2446e-04  3.6279e-07  2.3122e-07  3.6640e-07  8.4276e-08  9.9080e-07  9.9093e-08  0:29:03  250
+Connection to the license server has been lost for 12 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   251  1.2304e-04  3.5773e-07  2.2660e-07  3.6244e-07  8.6078e-08  9.7180e-07  9.8488e-08  0:28:58  249
+Connection to the license server has been lost for 12 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   252  1.1847e-04  3.3891e-07  2.1705e-07  3.4209e-07  8.3715e-08  9.4698e-07  9.7193e-08  0:28:52  248
+Connection to the license server has been lost for 12 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   253  1.2139e-04  3.5298e-07  2.1873e-07  3.5583e-07  8.3369e-08  9.3335e-07  9.7238e-08  0:28:46  247
+Connection to the license server has been lost for 12 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   254  1.1896e-04  3.4239e-07  2.1240e-07  3.4622e-07  8.6078e-08  9.1190e-07  9.7451e-08  0:27:50  246
+Connection to the license server has been lost for 13 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   255  1.2111e-04  3.5123e-07  2.1123e-07  3.5282e-07  8.3948e-08  8.9422e-07  9.7152e-08  0:27:54  245
+Connection to the license server has been lost for 13 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   256  1.1876e-04  3.4338e-07  2.0587e-07  3.4479e-07  8.4450e-08  8.7275e-07  9.6214e-08  0:27:55  244
+Connection to the license server has been lost for 13 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   257  1.1276e-04  3.2249e-07  1.9969e-07  3.2329e-07  8.3666e-08  8.4917e-07  9.7010e-08  0:27:55  243
+Connection to the license server has been lost for 13 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   258  1.1156e-04  3.1099e-07  1.9410e-07  3.1369e-07  8.4327e-08  8.2529e-07  9.6295e-08  0:28:42  242
+Connection to the license server has been lost for 13 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   259  1.1046e-04  3.1093e-07  1.9138e-07  3.1428e-07  8.6424e-08  8.0854e-07  9.6909e-08  0:28:29  241
+Connection to the license server has been lost for 13 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   260  1.0666e-04  2.9297e-07  1.8513e-07  2.9504e-07  8.3052e-08  7.8358e-07  9.5604e-08  0:28:17  240
+Connection to the license server has been lost for 13 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   261  1.1618e-04  3.3604e-07  1.9219e-07  3.3990e-07  8.4099e-08  7.4316e-07  9.5549e-08  0:27:19  239
+Connection to the license server has been lost for 13 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   262  1.1596e-04  3.3368e-07  1.8938e-07  3.3801e-07  8.2338e-08  7.1130e-07  9.4572e-08  0:26:31  238
+Connection to the license server has been lost for 13 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   263  1.1354e-04  3.2523e-07  1.8405e-07  3.2956e-07  8.2227e-08  6.8482e-07  9.4638e-08  0:26:40  237
+Connection to the license server has been lost for 14 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   264  1.1240e-04  3.2017e-07  1.8133e-07  3.2338e-07  8.1522e-08  6.6308e-07  9.5065e-08  0:25:57  236
+Connection to the license server has been lost for 14 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   265  1.1129e-04  3.1713e-07  1.7872e-07  3.1968e-07  8.1579e-08  6.4889e-07  9.6524e-08  0:26:10  235
+Connection to the license server has been lost for 14 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   266  1.1887e-04  3.4732e-07  1.8551e-07  3.4976e-07  8.2256e-08  6.4223e-07  9.5425e-08  0:25:31  234
+Connection to the license server has been lost for 14 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   267  1.1257e-04  3.2707e-07  1.7919e-07  3.2911e-07  8.2085e-08  6.2676e-07  9.4579e-08  0:24:59  233
+Connection to the license server has been lost for 14 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   268  1.1036e-04  3.1655e-07  1.7366e-07  3.1707e-07  8.2027e-08  6.1042e-07  9.5967e-08  0:25:19  232
+Connection to the license server has been lost for 14 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   269  1.0556e-04  2.9637e-07  1.6636e-07  2.9682e-07  8.1533e-08  5.9286e-07  9.4918e-08  0:24:47  231
+Connection to the license server has been lost for 14 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   270  1.1195e-04  3.1988e-07  1.7316e-07  3.2294e-07  8.1754e-08  5.9231e-07  9.5597e-08  0:25:07  230
+Connection to the license server has been lost for 14 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   271  1.0944e-04  3.1299e-07  1.6862e-07  3.1469e-07  8.1365e-08  5.8073e-07  9.5038e-08  0:24:35  229
+Connection to the license server has been lost for 14 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   272  1.1027e-04  3.1565e-07  1.7031e-07  3.2016e-07  8.3362e-08  5.7619e-07  9.5784e-08  0:24:54  228
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   273  1.0985e-04  3.1054e-07  1.6555e-07  3.1393e-07  8.1705e-08  5.6651e-07  9.5208e-08  0:24:22  227
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   274  1.1276e-04  3.2668e-07  1.6976e-07  3.2884e-07  8.2602e-08  5.6451e-07  9.4878e-08  0:24:41  226
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   275  1.1044e-04  3.1660e-07  1.6502e-07  3.1903e-07  8.1468e-08  5.5414e-07  9.5822e-08  0:24:55  225
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   276  1.0738e-04  3.0180e-07  1.6002e-07  3.0606e-07  8.1476e-08  5.4283e-07  9.5310e-08  0:25:04  224
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   277  1.0767e-04  3.0296e-07  1.5880e-07  3.0533e-07  8.1731e-08  5.3636e-07  9.4858e-08  0:25:10  223
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   278  1.0918e-04  3.1091e-07  1.5933e-07  3.1415e-07  8.2885e-08  5.3281e-07  9.4296e-08  0:24:29  222
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   279  1.1061e-04  3.1632e-07  1.5920e-07  3.1749e-07  8.1497e-08  5.2791e-07  9.4946e-08  0:24:39  221
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   280  1.0595e-04  2.9616e-07  1.5258e-07  2.9808e-07  8.1289e-08  5.1912e-07  9.3797e-08  0:24:46  220
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   281  1.0374e-04  2.8759e-07  1.5012e-07  2.8796e-07  8.1120e-08  5.1190e-07  9.2677e-08  0:24:06  219
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   282  1.1216e-04  3.2464e-07  1.5811e-07  3.2721e-07  8.0976e-08  5.1769e-07  9.3617e-08  0:23:33  218
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   283  1.0664e-04  3.0495e-07  1.5288e-07  3.0546e-07  8.0478e-08  5.0982e-07  9.3707e-08  0:23:49  217
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   284  1.0834e-04  3.1087e-07  1.5320e-07  3.1407e-07  8.0893e-08  5.0802e-07  9.3790e-08  0:23:17  216
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   285  1.0876e-04  3.0911e-07  1.5055e-07  3.0895e-07  8.1139e-08  5.0309e-07  9.3112e-08  0:23:34  215
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   286  1.0386e-04  2.9448e-07  1.4691e-07  2.9610e-07  8.1761e-08  4.9683e-07  9.3047e-08  0:23:03  214
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   287  1.0425e-04  2.9040e-07  1.4544e-07  2.9291e-07  8.0215e-08  4.9393e-07  9.2677e-08  0:22:36  213
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   288  1.0965e-04  3.1526e-07  1.4854e-07  3.1741e-07  8.0492e-08  4.9614e-07  9.2354e-08  0:22:14  212
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   289  1.0769e-04  3.0758e-07  1.4743e-07  3.1073e-07  8.0204e-08  4.9042e-07  9.2536e-08  0:22:38  211
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   290  1.0176e-04  2.8360e-07  1.4041e-07  2.8649e-07  8.1451e-08  4.8140e-07  9.2606e-08  0:22:55  210
+Connection to the license server has been lost for 15 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   291  1.0767e-04  3.0602e-07  1.4465e-07  3.0867e-07  7.9987e-08  4.8174e-07  9.2549e-08  0:22:26  209
+Connection to the license server has been lost for 16 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   292  1.0786e-04  3.0989e-07  1.4468e-07  3.1277e-07  7.9915e-08  4.7729e-07  9.3613e-08  0:22:01  208
+Connection to the license server has been lost for 16 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   293  1.0616e-04  3.0000e-07  1.4025e-07  3.0189e-07  7.9465e-08  4.6786e-07  9.2589e-08  0:22:22  207
+Connection to the license server has been lost for 16 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   294  1.0321e-04  2.9115e-07  1.3826e-07  2.9288e-07  7.9900e-08  4.6241e-07  9.2210e-08  0:21:55  206
+Connection to the license server has been lost for 16 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   295  1.1229e-04  3.2567e-07  1.4393e-07  3.2687e-07  7.9606e-08  4.6311e-07  9.2087e-08  0:21:33  205
+Connection to the license server has been lost for 16 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   296  1.0372e-04  2.9032e-07  1.3512e-07  2.9265e-07  7.9826e-08  4.5057e-07  9.2956e-08  0:21:55  204
+Connection to the license server has been lost for 16 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   297  1.0813e-04  3.1154e-07  1.3843e-07  3.1116e-07  8.0001e-08  4.4860e-07  9.2922e-08  0:21:30  203
+Connection to the license server has been lost for 16 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   298  1.0306e-04  2.8643e-07  1.3206e-07  2.9124e-07  8.0096e-08  4.3683e-07  9.1573e-08  0:21:10  202
+Connection to the license server has been lost for 16 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   299  1.0411e-04  2.9319e-07  1.3286e-07  2.9511e-07  8.0067e-08  4.3451e-07  9.1068e-08  0:21:32  201
+Connection to the license server has been lost for 16 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   300  1.0508e-04  2.9788e-07  1.3339e-07  2.9922e-07  8.0027e-08  4.3066e-07  9.1726e-08  0:21:49  200
+Connection to the license server has been lost for 17 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   301  1.0465e-04  2.9540e-07  1.3367e-07  2.9674e-07  7.9272e-08  4.2670e-07  9.1227e-08  0:21:20  199
+Connection to the license server has been lost for 17 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   302  9.6600e-05  2.6216e-07  1.2424e-07  2.6413e-07  7.9738e-08  4.1374e-07  9.1574e-08  0:20:57  198
+Connection to the license server has been lost for 17 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   303  1.0480e-04  2.9155e-07  1.3161e-07  2.9524e-07  8.0637e-08  4.2165e-07  9.1155e-08  0:21:16  197
+Connection to the license server has been lost for 17 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   304  1.0624e-04  2.9955e-07  1.3343e-07  3.0257e-07  8.0081e-08  4.1962e-07  9.1675e-08  0:21:30  196
+Connection to the license server has been lost for 17 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   305  1.0312e-04  2.8876e-07  1.2988e-07  2.9112e-07  8.1695e-08  4.1367e-07  9.2393e-08  0:21:01  195
+Connection to the license server has been lost for 17 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   306  9.7488e-05  2.6788e-07  1.2377e-07  2.6873e-07  7.9696e-08  4.0472e-07  9.1275e-08  0:20:36  194
+Connection to the license server has been lost for 17 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   307  1.0652e-04  2.9991e-07  1.3217e-07  3.0408e-07  7.9992e-08  4.1167e-07  9.1336e-08  0:20:54  193
+Connection to the license server has been lost for 17 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   308  1.0480e-04  2.9520e-07  1.3021e-07  2.9730e-07  8.0240e-08  4.0901e-07  9.1944e-08  0:20:29  192
+Connection to the license server has been lost for 17 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   309  9.5603e-05  2.5695e-07  1.2024e-07  2.5790e-07  7.9593e-08  3.9623e-07  9.1030e-08  0:20:45  191
+Connection to the license server has been lost for 18 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   310  9.6856e-05  2.5475e-07  1.1992e-07  2.5487e-07  7.9981e-08  3.9397e-07  9.1627e-08  0:20:57  190
+Connection to the license server has been lost for 18 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   311  1.0505e-04  2.9834e-07  1.3245e-07  2.9832e-07  7.9553e-08  4.0469e-07  9.1696e-08  0:20:27  189
+Connection to the license server has been lost for 18 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   312  1.0863e-04  3.1047e-07  1.3187e-07  3.1060e-07  7.9489e-08  4.0051e-07  9.2341e-08  0:20:40  188
+Connection to the license server has been lost for 18 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   313  1.0646e-04  2.9853e-07  1.2866e-07  3.0467e-07  8.2662e-08  3.9682e-07  9.1735e-08  0:20:11  187
+Connection to the license server has been lost for 18 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   314  1.0036e-04  2.7816e-07  1.2380e-07  2.7793e-07  7.9754e-08  3.8777e-07  9.2467e-08  0:19:47  186
+Connection to the license server has been lost for 18 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   315  1.1039e-04  3.1625e-07  1.3121e-07  3.1937e-07  8.0732e-08  3.9457e-07  9.1923e-08  0:20:03  185
+Connection to the license server has been lost for 18 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   316  1.0599e-04  2.9825e-07  1.2780e-07  2.9974e-07  7.9422e-08  3.8457e-07  9.1406e-08  0:20:15  184
+Connection to the license server has been lost for 18 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   317  1.0263e-04  2.8612e-07  1.2317e-07  2.8839e-07  8.0200e-08  3.7711e-07  9.1802e-08  0:19:46  183
+Connection to the license server has been lost for 18 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   318  1.0799e-04  3.0610e-07  1.2630e-07  3.0777e-07  7.9283e-08  3.7461e-07  9.1422e-08  0:19:59  182
+Connection to the license server has been lost for 19 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   319  1.0349e-04  2.8970e-07  1.2151e-07  2.9134e-07  8.0425e-08  3.6544e-07  9.2412e-08  0:19:31  181
+Connection to the license server has been lost for 19 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   320  9.8874e-05  2.7193e-07  1.1677e-07  2.7113e-07  7.9213e-08  3.5631e-07  9.0952e-08  0:19:44  180
+Connection to the license server has been lost for 19 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   321  9.9371e-05  2.7157e-07  1.1706e-07  2.7418e-07  7.9447e-08  3.5178e-07  9.1583e-08  0:19:52  179
+Connection to the license server has been lost for 19 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   322  1.0655e-04  3.0085e-07  1.2094e-07  3.0386e-07  8.0056e-08  3.5100e-07  9.0800e-08  0:19:58  178
+Connection to the license server has been lost for 19 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   323  1.0782e-04  3.0811e-07  1.2388e-07  3.1054e-07  7.9854e-08  3.4901e-07  9.1258e-08  0:19:25  177
+Connection to the license server has been lost for 19 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   324  1.0000e-04  2.8025e-07  1.1616e-07  2.8121e-07  8.1822e-08  3.3775e-07  9.0973e-08  0:19:33  176
+Connection to the license server has been lost for 19 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   325  1.0016e-04  2.7437e-07  1.1209e-07  2.7598e-07  7.9689e-08  3.2936e-07  9.0630e-08  0:19:38  175
+Connection to the license server has been lost for 19 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   326  1.0884e-04  3.1146e-07  1.2121e-07  3.1355e-07  7.9028e-08  3.3374e-07  9.1250e-08  0:19:06  174
+Connection to the license server has been lost for 19 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   327  9.9520e-05  2.7585e-07  1.1217e-07  2.7668e-07  7.8812e-08  3.2039e-07  9.1996e-08  0:19:14  173
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   328  1.0607e-04  2.9901e-07  1.1571e-07  3.0186e-07  8.0285e-08  3.2280e-07  9.1553e-08  0:18:44  172
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   329  1.0081e-04  2.8308e-07  1.1307e-07  2.8488e-07  7.8802e-08  3.1923e-07  9.1126e-08  0:18:53  171
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   330  1.0241e-04  2.8532e-07  1.1262e-07  2.8871e-07  7.9108e-08  3.1644e-07  8.9883e-08  0:18:25  170
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   331  1.0182e-04  2.8141e-07  1.1108e-07  2.8451e-07  7.8960e-08  3.1470e-07  9.0834e-08  0:18:36  169
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   332  9.6680e-05  2.6589e-07  1.0850e-07  2.6626e-07  7.8618e-08  3.1148e-07  9.1079e-08  0:18:43  168
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   333  1.0724e-04  3.0397e-07  1.1449e-07  3.0766e-07  7.8906e-08  3.1850e-07  9.0865e-08  0:18:13  167
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   334  9.1992e-05  2.4802e-07  1.0153e-07  2.4895e-07  8.0282e-08  3.0507e-07  9.0763e-08  0:18:22  166
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   335  1.0284e-04  2.8893e-07  1.1142e-07  2.9069e-07  7.9490e-08  3.1355e-07  9.0661e-08  0:17:54  165
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   336  1.0065e-04  2.8013e-07  1.0995e-07  2.8184e-07  8.0247e-08  3.1159e-07  9.0912e-08  0:18:04  164
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   337  1.0141e-04  2.8488e-07  1.0937e-07  2.8766e-07  7.9421e-08  3.1029e-07  9.0552e-08  0:17:37  163
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   338  1.0669e-04  3.0288e-07  1.1321e-07  3.0464e-07  7.8948e-08  3.1219e-07  9.0948e-08  0:17:47  162
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   339  1.0014e-04  2.8247e-07  1.1001e-07  2.8346e-07  8.1058e-08  3.1136e-07  9.1219e-08  0:17:22  161
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   340  1.0594e-04  3.0023e-07  1.1340e-07  3.0095e-07  7.9205e-08  3.1422e-07  9.1354e-08  0:17:32  160
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   341  1.0001e-04  2.7616e-07  1.0708e-07  2.7847e-07  7.8484e-08  3.0701e-07  8.9562e-08  0:17:39  159
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   342  1.0549e-04  2.9807e-07  1.1118e-07  3.0030e-07  7.8455e-08  3.1086e-07  8.9737e-08  0:17:12  158
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   343  1.0378e-04  2.9233e-07  1.1040e-07  2.9332e-07  7.8484e-08  3.1084e-07  8.9493e-08  0:17:20  157
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   344  1.0296e-04  2.8867e-07  1.0975e-07  2.8802e-07  7.9103e-08  3.0957e-07  9.0146e-08  0:16:54  156
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   345  9.9490e-05  2.7263e-07  1.0558e-07  2.7326e-07  7.8726e-08  3.0459e-07  9.1160e-08  0:16:32  155
+Connection to the license server has been lost for 20 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   346  9.8731e-05  2.7161e-07  1.0501e-07  2.7259e-07  8.0593e-08  3.0397e-07  9.0355e-08  0:16:44  154
+Connection to the license server has been lost for 21 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   347  8.8858e-05  2.3247e-07  9.5355e-08  2.3312e-07  7.8810e-08  2.9319e-07  8.9623e-08  0:16:52  153
+Connection to the license server has been lost for 21 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   348  1.0990e-04  3.1521e-07  1.1611e-07  3.1691e-07  7.9794e-08  3.1307e-07  9.0324e-08  0:16:27  152
+Connection to the license server has been lost for 21 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   349  1.0406e-04  2.9474e-07  1.1088e-07  2.9639e-07  7.8636e-08  3.0591e-07  9.0733e-08  0:16:05  151
+Connection to the license server has been lost for 21 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   350  9.8214e-05  2.7226e-07  1.0716e-07  2.7332e-07  7.9793e-08  3.0094e-07  9.0375e-08  0:16:17  150
+Connection to the license server has been lost for 21 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   351  9.6122e-05  2.6218e-07  1.0166e-07  2.6083e-07  7.9321e-08  2.9471e-07  8.9953e-08  0:16:25  149
+Connection to the license server has been lost for 21 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   352  1.0513e-04  2.9491e-07  1.0891e-07  2.9849e-07  8.0154e-08  2.9891e-07  8.9445e-08  0:16:30  148
+Connection to the license server has been lost for 21 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   353  1.0335e-04  2.9057e-07  1.0896e-07  2.9179e-07  7.8878e-08  2.9754e-07  9.0625e-08  0:16:03  147
+Connection to the license server has been lost for 21 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   354  9.9800e-05  2.7738e-07  1.0527e-07  2.7898e-07  7.8417e-08  2.9169e-07  9.0131e-08  0:16:10  146
+Connection to the license server has been lost for 21 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   355  9.6788e-05  2.6414e-07  1.0198e-07  2.6652e-07  7.9572e-08  2.8539e-07  9.0312e-08  0:15:44  145
+Connection to the license server has been lost for 22 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   356  9.7154e-05  2.6504e-07  1.0150e-07  2.6515e-07  7.8721e-08  2.8475e-07  8.9311e-08  0:15:52  144
+Connection to the license server has been lost for 22 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   357  1.0969e-04  3.1385e-07  1.1458e-07  3.1540e-07  7.9602e-08  2.9816e-07  9.1104e-08  0:15:56  143
+Connection to the license server has been lost for 22 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   358  1.0093e-04  2.8175e-07  1.0554e-07  2.8274e-07  7.8607e-08  2.8903e-07  9.0250e-08  0:15:30  142
+Connection to the license server has been lost for 22 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   359  9.7060e-05  2.6460e-07  1.0161e-07  2.6595e-07  7.8745e-08  2.8503e-07  9.0169e-08  0:15:36  141
+Connection to the license server has been lost for 22 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   360  1.0275e-04  2.8647e-07  1.0707e-07  2.8746e-07  7.8715e-08  2.9023e-07  8.9846e-08  0:15:40  140
+Connection to the license server has been lost for 22 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   361  9.9096e-05  2.7659e-07  1.0570e-07  2.7685e-07  7.9022e-08  2.9042e-07  9.0100e-08  0:15:41  139
+Connection to the license server has been lost for 22 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   362  9.8856e-05  2.7136e-07  1.0406e-07  2.7254e-07  8.0138e-08  2.9044e-07  9.1313e-08  0:15:13  138
+Connection to the license server has been lost for 22 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   363  1.0348e-04  2.8814e-07  1.0794e-07  2.8912e-07  7.8613e-08  2.9742e-07  9.0183e-08  0:15:17  137
+Connection to the license server has been lost for 22 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   364  1.0153e-04  2.8383e-07  1.0671e-07  2.8693e-07  7.8656e-08  2.9877e-07  9.0661e-08  0:14:51  136
+Connection to the license server has been lost for 23 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   365  9.7547e-05  2.6601e-07  1.0298e-07  2.6739e-07  7.9031e-08  2.9787e-07  9.0296e-08  0:15:51  135
+Connection to the license server has been lost for 23 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   366  1.0688e-04  3.0634e-07  1.1362e-07  3.0594e-07  7.8738e-08  3.1210e-07  9.1662e-08  0:16:36  134
+Connection to the license server has been lost for 23 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   367  1.0159e-04  2.8404e-07  1.1030e-07  2.8868e-07  7.9105e-08  3.1409e-07  9.0027e-08  0:16:17  133
+Connection to the license server has been lost for 23 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   368  1.0607e-04  3.0077e-07  1.1399e-07  3.0275e-07  7.9377e-08  3.2210e-07  9.0964e-08  0:16:27  132
+Connection to the license server has been lost for 23 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   369  1.0154e-04  2.8607e-07  1.1234e-07  2.8705e-07  7.9428e-08  3.2532e-07  8.9996e-08  0:16:33  131
+Connection to the license server has been lost for 23 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   370  1.0069e-04  2.7815e-07  1.0978e-07  2.7969e-07  7.8935e-08  3.2827e-07  9.0666e-08  0:15:45  130
+Connection to the license server has been lost for 23 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   371  9.4698e-05  2.5327e-07  1.0423e-07  2.5393e-07  7.9118e-08  3.2496e-07  8.9644e-08  0:15:05  129
+Connection to the license server has been lost for 23 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   372  1.0112e-04  2.8115e-07  1.1391e-07  2.8063e-07  8.0392e-08  3.3975e-07  9.0338e-08  0:14:32  128
+Connection to the license server has been lost for 24 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   373  1.0571e-04  3.0135e-07  1.1827e-07  3.0244e-07  7.9038e-08  3.4946e-07  9.1440e-08  0:14:55  127
+Connection to the license server has been lost for 24 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   374  9.5758e-05  2.6275e-07  1.0884e-07  2.6417e-07  7.9614e-08  3.4353e-07  9.0279e-08  0:17:43  126
+Connection to the license server has been lost for 24 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   375  1.0049e-04  2.7771e-07  1.1572e-07  2.8012e-07  8.0512e-08  3.5416e-07  9.0933e-08  0:19:04  125
+Connection to the license server has been lost for 24 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   376  9.5664e-05  2.5881e-07  1.0976e-07  2.5848e-07  7.9251e-08  3.5060e-07  9.0115e-08  0:20:30  124
+Connection to the license server has been lost for 24 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   377  9.5852e-05  2.5318e-07  1.0870e-07  2.5316e-07  7.9251e-08  3.5110e-07  9.0154e-08  0:24:04  123
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   378  9.9347e-05  2.7437e-07  1.1683e-07  2.7527e-07  7.9873e-08  3.6344e-07  9.1301e-08  0:25:36  122
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   379  9.9374e-05  2.7471e-07  1.1504e-07  2.7741e-07  7.8959e-08  3.6265e-07  9.1716e-08  0:23:32  121
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   380  1.0228e-04  2.8794e-07  1.2016e-07  2.8975e-07  8.2045e-08  3.7301e-07  9.2041e-08  0:21:28  120
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   381  9.8062e-05  2.7035e-07  1.1571e-07  2.7240e-07  8.0538e-08  3.7023e-07  9.0310e-08  0:19:49  119
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   382  1.0646e-04  3.0378e-07  1.2505e-07  3.0631e-07  7.9421e-08  3.8409e-07  9.1782e-08  0:18:05  118
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   383  1.0470e-04  2.9922e-07  1.2287e-07  3.0112e-07  7.9111e-08  3.8528e-07  9.1501e-08  0:17:28  117
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   384  9.9496e-05  2.7633e-07  1.1888e-07  2.7647e-07  7.9441e-08  3.8532e-07  9.0804e-08  0:16:56  116
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   385  1.0467e-04  2.9621e-07  1.2471e-07  2.9572e-07  7.9767e-08  3.9476e-07  9.1310e-08  0:16:07  115
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   386  1.0869e-04  3.1315e-07  1.3008e-07  3.1599e-07  7.9141e-08  4.0450e-07  9.1905e-08  0:18:29  114
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   387  1.0115e-04  2.8630e-07  1.2478e-07  2.8671e-07  7.9303e-08  4.0397e-07  9.2361e-08  0:18:03  113
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   388  1.0078e-04  2.7927e-07  1.2349e-07  2.8195e-07  7.9912e-08  4.0641e-07  9.1949e-08  0:18:03  112
+Connection to the license server has been lost for 25 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   389  1.0283e-04  2.8783e-07  1.2556e-07  2.8871e-07  7.9449e-08  4.1529e-07  9.1732e-08  0:19:51  111
+Connection to the license server has been lost for 26 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   390  1.0838e-04  3.1179e-07  1.3352e-07  3.1572e-07  8.0018e-08  4.2837e-07  9.1552e-08  0:18:18  110
+Connection to the license server has been lost for 26 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   391  1.0269e-04  2.8969e-07  1.2839e-07  2.9162e-07  8.0363e-08  4.2897e-07  9.1764e-08  0:17:03  109
+Connection to the license server has been lost for 26 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   392  1.0230e-04  2.8677e-07  1.3044e-07  2.8820e-07  7.9424e-08  4.3589e-07  9.2353e-08  0:16:02  108
+Connection to the license server has been lost for 26 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   393  1.0800e-04  3.0801e-07  1.3466e-07  3.1193e-07  7.9419e-08  4.4604e-07  9.1087e-08  0:15:34  107
+Connection to the license server has been lost for 26 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   394  1.0450e-04  2.9614e-07  1.3371e-07  2.9912e-07  8.0745e-08  4.5020e-07  9.1115e-08  0:15:10  106
+Connection to the license server has been lost for 26 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   395  1.0270e-04  2.8893e-07  1.3289e-07  2.9152e-07  7.9951e-08  4.5447e-07  9.1968e-08  0:14:28  105
+Connection to the license server has been lost for 26 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   396  1.0466e-04  2.9813e-07  1.3659e-07  3.0077e-07  7.9674e-08  4.6219e-07  9.2231e-08  0:13:53  104
+Connection to the license server has been lost for 26 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   397  1.0491e-04  2.9836e-07  1.3598e-07  3.0065e-07  8.0300e-08  4.6381e-07  9.2301e-08  0:13:04  103
+Connection to the license server has been lost for 27 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   398  9.9639e-05  2.7691e-07  1.3236e-07  2.7839e-07  7.9497e-08  4.6313e-07  9.2092e-08  0:12:23  102
+Connection to the license server has been lost for 27 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   399  1.0613e-04  3.0007e-07  1.3631e-07  3.0220e-07  7.9554e-08  4.6918e-07  9.1693e-08  0:12:51  101
+Connection to the license server has been lost for 27 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   400  1.0160e-04  2.8321e-07  1.3358e-07  2.8419e-07  8.0014e-08  4.6635e-07  9.2272e-08  0:13:30  100
+Connection to the license server has been lost for 27 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   401  1.0623e-04  3.0370e-07  1.3951e-07  3.0614e-07  7.9761e-08  4.7238e-07  9.2411e-08  0:13:20   99
+Connection to the license server has been lost for 27 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   402  1.0698e-04  3.0342e-07  1.3740e-07  3.0657e-07  8.0220e-08  4.6533e-07  9.2771e-08  0:12:51   98
+Connection to the license server has been lost for 27 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   403  9.8971e-05  2.7328e-07  1.2944e-07  2.7514e-07  8.0515e-08  4.5524e-07  9.2345e-08  0:12:26   97
+Connection to the license server has been lost for 27 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   404  1.0918e-04  3.1171e-07  1.3864e-07  3.1392e-07  8.0074e-08  4.6180e-07  9.2544e-08  0:11:46   96
+Connection to the license server has been lost for 27 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   405  1.0692e-04  3.0641e-07  1.3722e-07  3.0730e-07  7.9889e-08  4.5601e-07  9.2016e-08  0:11:13   95
+Connection to the license server has been lost for 28 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   406  1.0552e-04  2.9914e-07  1.3544e-07  3.0133e-07  8.0060e-08  4.4985e-07  9.2169e-08  0:11:04   94
+Connection to the license server has been lost for 28 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   407  1.0952e-04  3.1542e-07  1.3801e-07  3.1700e-07  7.9896e-08  4.4755e-07  9.2437e-08  0:10:56   93
+Connection to the license server has been lost for 28 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   408  9.8028e-05  2.6925e-07  1.2587e-07  2.7353e-07  7.9388e-08  4.3093e-07  9.0982e-08  0:11:43   92
+Connection to the license server has been lost for 28 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   409  1.0502e-04  2.9508e-07  1.3332e-07  2.9747e-07  8.0726e-08  4.3226e-07  9.2446e-08  0:11:42   91
+Connection to the license server has been lost for 28 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   410  1.0242e-04  2.8714e-07  1.3019e-07  2.8820e-07  8.1700e-08  4.2615e-07  9.3300e-08  0:12:15   90
+Connection to the license server has been lost for 28 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   411  1.0060e-04  2.7885e-07  1.2684e-07  2.8025e-07  8.0159e-08  4.1943e-07  9.1186e-08  0:12:04   89
+Connection to the license server has been lost for 28 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   412  1.0353e-04  2.9287e-07  1.3136e-07  2.9558e-07  7.9870e-08  4.2138e-07  9.1195e-08  0:11:18   88
+Connection to the license server has been lost for 28 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   413  1.0691e-04  3.0543e-07  1.3393e-07  3.0752e-07  7.9820e-08  4.2329e-07  9.2359e-08  0:13:18   87
+Connection to the license server has been lost for 29 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   414  1.0972e-04  3.1208e-07  1.3509e-07  3.1552e-07  8.1984e-08  4.2195e-07  9.2885e-08  0:13:40   86
+Connection to the license server has been lost for 29 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   415  1.0108e-04  2.8273e-07  1.2762e-07  2.8462e-07  8.0037e-08  4.1429e-07  9.2155e-08  0:14:29   85
+Connection to the license server has been lost for 29 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   416  1.0749e-04  3.0556e-07  1.3410e-07  3.0951e-07  8.0249e-08  4.2154e-07  9.2244e-08  0:13:58   84
+Connection to the license server has been lost for 29 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   417  1.0301e-04  2.8792e-07  1.3029e-07  2.9073e-07  8.0445e-08  4.1891e-07  9.2525e-08  0:13:16   83
+Connection to the license server has been lost for 29 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   418  9.7338e-05  2.6342e-07  1.2375e-07  2.6686e-07  8.0346e-08  4.1635e-07  9.0934e-08  0:12:40   82
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   419  1.0716e-04  3.0631e-07  1.3561e-07  3.0724e-07  7.9839e-08  4.3227e-07  9.2294e-08  0:12:10   81
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   420  1.0331e-04  2.9030e-07  1.3192e-07  2.9262e-07  8.0004e-08  4.3398e-07  9.1605e-08  0:12:33   80
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   421  9.8056e-05  2.6352e-07  1.2676e-07  2.6525e-07  8.0604e-08  4.3293e-07  9.2306e-08  0:11:45   79
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   422  1.0405e-04  2.8363e-07  1.3243e-07  2.8647e-07  7.9767e-08  4.4363e-07  9.1649e-08  0:11:22   78
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   423  1.1311e-04  3.2876e-07  1.4377e-07  3.3133e-07  8.1527e-08  4.6129e-07  9.1796e-08  0:11:02   77
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   424  1.0520e-04  2.9871e-07  1.3657e-07  3.0062e-07  8.1529e-08  4.6055e-07  9.1903e-08  0:10:44   76
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   425  9.7720e-05  2.6606e-07  1.2970e-07  2.6962e-07  8.0050e-08  4.5934e-07  9.1847e-08  0:10:59   75
+Connection to the license server has been lost for 31 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   426  1.0624e-04  2.9734e-07  1.3812e-07  2.9861e-07  8.0575e-08  4.7230e-07  9.1887e-08  0:10:23   74
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   427  1.0873e-04  3.1192e-07  1.4356e-07  3.1556e-07  8.2059e-08  4.8136e-07  9.3384e-08  0:10:23   73
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   428  1.0591e-04  3.0092e-07  1.3953e-07  3.0441e-07  8.0001e-08  4.7981e-07  9.2890e-08  0:10:21   72
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   429  1.0682e-04  3.0367e-07  1.4023e-07  3.0602e-07  8.1648e-08  4.8284e-07  9.2414e-08  0:10:18   71
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   430  1.0811e-04  3.1080e-07  1.4240e-07  3.1322e-07  7.9807e-08  4.8683e-07  9.2532e-08  0:10:14   70
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   431  1.0665e-04  3.0412e-07  1.4026e-07  3.0465e-07  7.9631e-08  4.8345e-07  9.2863e-08  0:10:08   69
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   432  1.0506e-04  2.9715e-07  1.3780e-07  2.9998e-07  8.0921e-08  4.8005e-07  9.2383e-08  0:09:35   68
+Connection to the license server has been lost for 30 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   433  1.0610e-04  3.0346e-07  1.3924e-07  3.0468e-07  7.9506e-08  4.7976e-07  9.3231e-08  0:09:07   67
+Connection to the license server has been lost for 31 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   434  1.0295e-04  2.9009e-07  1.3518e-07  2.9083e-07  8.1706e-08  4.7255e-07  9.2008e-08  0:08:43   66
+Connection to the license server has been lost for 31 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   435  9.7654e-05  2.6347e-07  1.2854e-07  2.6522e-07  8.0302e-08  4.6169e-07  9.2021e-08  0:08:49   65
+Connection to the license server has been lost for 31 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   436  9.5556e-05  2.5197e-07  1.2398e-07  2.5236e-07  7.9593e-08  4.5190e-07  9.2486e-08  0:08:52   64
+Connection to the license server has been lost for 31 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   437  1.0611e-04  2.9795e-07  1.3379e-07  2.9788e-07  7.9229e-08  4.5803e-07  9.1693e-08  0:08:40   63
+Connection to the license server has been lost for 31 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   438  1.0702e-04  3.0636e-07  1.3616e-07  3.0748e-07  7.9409e-08  4.5267e-07  9.1470e-08  0:08:41   62
+Connection to the license server has been lost for 31 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   439  1.0430e-04  2.9870e-07  1.3454e-07  2.9952e-07  8.1645e-08  4.4579e-07  9.2482e-08  0:08:28   61
+Connection to the license server has been lost for 31 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   440  1.0191e-04  2.8404e-07  1.2797e-07  2.8567e-07  7.9554e-08  4.3021e-07  9.2171e-08  0:07:51   60
+Connection to the license server has been lost for 32 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   441  1.0395e-04  2.9035e-07  1.2869e-07  2.9364e-07  7.9233e-08  4.2331e-07  9.2741e-08  0:07:33   59
+Connection to the license server has been lost for 32 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   442  9.7383e-05  2.6789e-07  1.2234e-07  2.6996e-07  8.0507e-08  4.0899e-07  9.1660e-08  0:07:06   58
+Connection to the license server has been lost for 32 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   443  1.0159e-04  2.7985e-07  1.2374e-07  2.8223e-07  8.2157e-08  4.0439e-07  9.1271e-08  0:06:55   57
+Connection to the license server has been lost for 32 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   444  1.0656e-04  3.0581e-07  1.2859e-07  3.0697e-07  7.9302e-08  4.0093e-07  9.2299e-08  0:06:56   56
+Connection to the license server has been lost for 32 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   445  9.7273e-05  2.6860e-07  1.1934e-07  2.6955e-07  8.0257e-08  3.8631e-07  9.2065e-08  0:06:44   55
+Connection to the license server has been lost for 32 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   446  1.0206e-04  2.8312e-07  1.2142e-07  2.8570e-07  7.9846e-08  3.8181e-07  9.1723e-08  0:06:43   54
+Connection to the license server has been lost for 32 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   447  1.0590e-04  2.9959e-07  1.2437e-07  3.0174e-07  7.9580e-08  3.7839e-07  9.1005e-08  0:06:20   53
+Connection to the license server has been lost for 32 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   448  9.6588e-05  2.6687e-07  1.1662e-07  2.6738e-07  7.8968e-08  3.6572e-07  9.1346e-08  0:06:11   52
+Connection to the license server has been lost for 32 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   449  1.0929e-04  3.1322e-07  1.2738e-07  3.1724e-07  8.0451e-08  3.7165e-07  9.2147e-08  0:05:53   51
+Connection to the license server has been lost for 33 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   450  1.0327e-04  2.8908e-07  1.2160e-07  2.9138e-07  7.9835e-08  3.5901e-07  9.1934e-08  0:05:37   50
+Connection to the license server has been lost for 33 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   451  9.9244e-05  2.7185e-07  1.1709e-07  2.7417e-07  7.8953e-08  3.5189e-07  9.1698e-08  0:05:32   49
+Connection to the license server has been lost for 33 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   452  1.0841e-04  3.0806e-07  1.2424e-07  3.1054e-07  7.8858e-08  3.5382e-07  9.1330e-08  0:05:37   48
+Connection to the license server has been lost for 33 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   453  1.0496e-04  2.9521e-07  1.1966e-07  2.9609e-07  8.0470e-08  3.4336e-07  9.1638e-08  0:05:30   47
+Connection to the license server has been lost for 33 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   454  9.7755e-05  2.6729e-07  1.1171e-07  2.6986e-07  7.9308e-08  3.3158e-07  9.1040e-08  0:05:32   46
+Connection to the license server has been lost for 33 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   455  1.1092e-04  3.1912e-07  1.2410e-07  3.2003e-07  7.9365e-08  3.3905e-07  9.1375e-08  0:05:23   45
+Connection to the license server has been lost for 33 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   456  1.0008e-04  2.7800e-07  1.1313e-07  2.7904e-07  8.0385e-08  3.2412e-07  9.1683e-08  0:05:05   44
+Connection to the license server has been lost for 33 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   457  1.0236e-04  2.8246e-07  1.1375e-07  2.8386e-07  7.8994e-08  3.2185e-07  9.0939e-08  0:04:59   43
+Connection to the license server has been lost for 33 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   458  1.0676e-04  3.0310e-07  1.1929e-07  3.0427e-07  8.1120e-08  3.2415e-07  9.1523e-08  0:04:44   42
+Connection to the license server has been lost for 34 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   459  1.0636e-04  2.9935e-07  1.1645e-07  3.0084e-07  8.0008e-08  3.1756e-07  9.1205e-08  0:04:31   41
+Connection to the license server has been lost for 34 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   460  1.0888e-04  3.0972e-07  1.2001e-07  3.1088e-07  7.9203e-08  3.1653e-07  9.0698e-08  0:04:19   40
+Connection to the license server has been lost for 34 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   461  1.0199e-04  2.8384e-07  1.1219e-07  2.8489e-07  8.1058e-08  3.0555e-07  9.1321e-08  0:04:25   39
+Connection to the license server has been lost for 34 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   462  9.8725e-05  2.6817e-07  1.0729e-07  2.7020e-07  7.8908e-08  2.9899e-07  9.0665e-08  0:04:20   38
+Connection to the license server has been lost for 34 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   463  1.0821e-04  3.0667e-07  1.1611e-07  3.1000e-07  7.9061e-08  3.0531e-07  9.1348e-08  0:04:14   37
+Connection to the license server has been lost for 34 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   464  9.9125e-05  2.7427e-07  1.0775e-07  2.7610e-07  8.0233e-08  2.9527e-07  9.0956e-08  0:04:08   36
+Connection to the license server has been lost for 34 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   465  9.8719e-05  2.7257e-07  1.0976e-07  2.7270e-07  7.8789e-08  2.9682e-07  9.1746e-08  0:03:55   35
+Connection to the license server has been lost for 34 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   466  9.7617e-05  2.6556e-07  1.0592e-07  2.6579e-07  8.0500e-08  2.9279e-07  9.0877e-08  0:03:50   34
+Connection to the license server has been lost for 34 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   467  1.0164e-04  2.8362e-07  1.1020e-07  2.8498e-07  7.9563e-08  2.9666e-07  9.1417e-08  0:03:45   33
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   468  1.0526e-04  2.9545e-07  1.1259e-07  2.9914e-07  7.9275e-08  2.9771e-07  9.1483e-08  0:03:33   32
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   469  1.0270e-04  2.9031e-07  1.1108e-07  2.9240e-07  7.9291e-08  2.9650e-07  9.1224e-08  0:03:22   31
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   470  1.0029e-04  2.7588e-07  1.0661e-07  2.7707e-07  7.8753e-08  2.9103e-07  9.0839e-08  0:03:19   30
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   471  1.0311e-04  2.8765e-07  1.0934e-07  2.9029e-07  7.9069e-08  2.9180e-07  8.9873e-08  0:03:20   29
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   472  1.0384e-04  2.9173e-07  1.0927e-07  2.9419e-07  7.8647e-08  2.9230e-07  9.0385e-08  0:03:14   28
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   473  1.0213e-04  2.8627e-07  1.0869e-07  2.8911e-07  7.8456e-08  2.9069e-07  9.0843e-08  0:03:07   27
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   474  9.9013e-05  2.7277e-07  1.0424e-07  2.7349e-07  7.8512e-08  2.8753e-07  9.0219e-08  0:02:55   26
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   475  1.0477e-04  2.9622e-07  1.1080e-07  2.9960e-07  8.1678e-08  2.9485e-07  9.0889e-08  0:02:50   25
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   476  1.0411e-04  2.9112e-07  1.0948e-07  2.9369e-07  7.8787e-08  2.9328e-07  9.0495e-08  0:02:39   24
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   477  9.9217e-05  2.7283e-07  1.0421e-07  2.7218e-07  7.9863e-08  2.8976e-07  9.0013e-08  0:02:30   23
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   478  9.8596e-05  2.7026e-07  1.0388e-07  2.7187e-07  7.9179e-08  2.9105e-07  9.0237e-08  0:02:25   22
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   479  9.8637e-05  2.7298e-07  1.0607e-07  2.7648e-07  7.8445e-08  2.9386e-07  9.1163e-08  0:02:25   21
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   480  9.7428e-05  2.6543e-07  1.0394e-07  2.6624e-07  7.8346e-08  2.9424e-07  9.0158e-08  0:02:22   20
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   481  1.0723e-04  3.0686e-07  1.1188e-07  3.0833e-07  7.9013e-08  3.0462e-07  9.0354e-08  0:02:18   19
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   482  9.7612e-05  2.6871e-07  1.0424e-07  2.7027e-07  7.8510e-08  2.9692e-07  8.9727e-08  0:02:07   18
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   483  1.0740e-04  3.0543e-07  1.1413e-07  3.0821e-07  7.8439e-08  3.0757e-07  9.0776e-08  0:01:59   17
+Connection to the license server has been lost for 35 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   484  9.5490e-05  2.5819e-07  1.0122e-07  2.6019e-07  7.8450e-08  2.9504e-07  9.0309e-08  0:01:49   16
+Connection to the license server has been lost for 36 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   485  1.0596e-04  2.9779e-07  1.1241e-07  3.0042e-07  7.9131e-08  3.0691e-07  9.0866e-08  0:01:40   15
+Connection to the license server has been lost for 36 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   486  9.9527e-05  2.7737e-07  1.0627e-07  2.7904e-07  7.8386e-08  3.0129e-07  9.0932e-08  0:01:34   14
+Connection to the license server has been lost for 36 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   487  9.9292e-05  2.7408e-07  1.0552e-07  2.7585e-07  7.9896e-08  3.0135e-07  8.9975e-08  0:01:28   13
+Connection to the license server has been lost for 36 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   488  1.0814e-04  3.0810e-07  1.1315e-07  3.0963e-07  7.8655e-08  3.0960e-07  9.0973e-08  0:01:22   12
+Connection to the license server has been lost for 36 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   489  9.8051e-05  2.7115e-07  1.0495e-07  2.7287e-07  7.8760e-08  3.0197e-07  9.0099e-08  0:01:15   11
+Connection to the license server has been lost for 36 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   490  1.0326e-04  2.9034e-07  1.0801e-07  2.9069e-07  7.8427e-08  3.0564e-07  9.0133e-08  0:01:11   10
+Connection to the license server has been lost for 36 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   491  9.7991e-05  2.6854e-07  1.0317e-07  2.6960e-07  7.8518e-08  2.9990e-07  9.0772e-08  0:01:02    9
+Connection to the license server has been lost for 36 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   492  1.0445e-04  2.9538e-07  1.1124e-07  2.9695e-07  7.8435e-08  3.0764e-07  9.0498e-08  0:00:55    8
+Connection to the license server has been lost for 36 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   493  1.0412e-04  2.9600e-07  1.1023e-07  2.9670e-07  7.8861e-08  3.0606e-07  9.1235e-08  0:00:48    7
+Connection to the license server has been lost for 37 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   494  9.7131e-05  2.6695e-07  1.0222e-07  2.6903e-07  7.8915e-08  2.9839e-07  8.9571e-08  0:00:40    6
+Connection to the license server has been lost for 37 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   495  9.6941e-05  2.6737e-07  1.0370e-07  2.6631e-07  7.8732e-08  2.9900e-07  9.0269e-08  0:00:33    5
+Connection to the license server has been lost for 37 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   496  1.0759e-04  3.0422e-07  1.1220e-07  3.0647e-07  7.8743e-08  3.0556e-07  9.0764e-08  0:00:27    4
+Connection to the license server has been lost for 37 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   497  1.0163e-04  2.8620e-07  1.0781e-07  2.8815e-07  7.9406e-08  3.0224e-07  9.1272e-08  0:00:21    3
+Connection to the license server has been lost for 37 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   498  9.8634e-05  2.7000e-07  1.0327e-07  2.7181e-07  7.8504e-08  2.9515e-07  8.9567e-08  0:00:14    2
+Connection to the license server has been lost for 37 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   499  9.9698e-05  2.7650e-07  1.0426e-07  2.7761e-07  7.8351e-08  2.9520e-07  8.9158e-08  0:00:07    1
+Connection to the license server has been lost for 37 minutes.
+
+ Reversed flow on 90 faces (0.9% area) of pressure-outlet 8.
+   500  8.9986e-05  2.3539e-07  9.4575e-08  2.3733e-07  7.8960e-08  2.8530e-07  8.9471e-08  0:00:00    0
+
+Calculation complete.
+(cx-gui-do cx-activate-item "Information*OK")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame6(Results)*Table1*Table3(Reports)*PushButton2(Fluxes)")
+(cx-gui-do cx-set-list-selections "Flux Reports*Table2*Table2*List2(Boundaries)" '( 0))
+(cx-gui-do cx-activate-item "Flux Reports*Table2*Table2*List2(Boundaries)")
+(cx-gui-do cx-set-list-selections "Flux Reports*Table2*Table2*List2(Boundaries)" '( 0 1))
+(cx-gui-do cx-activate-item "Flux Reports*Table2*Table2*List2(Boundaries)")
+(cx-gui-do cx-activate-item "Flux Reports*PanelButtons*PushButton1(OK)")
+
+                  Mass Flow Rate               [kg/s]
+-------------------------------- --------------------
+                           inlet           0.14999987
+                          outlet          -0.15000011
+                ---------------- --------------------
+                             Net       -2.3841858e-07
+(cx-gui-do cx-activate-item "Flux Reports*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame6(Results)*Table1*Table3(Surface)*PushButton1(Create)")
+(cx-gui-do cx-activate-item "MenuBar*PopupMenuCreate*Iso-Surface...")
+(cx-gui-do cx-set-list-selections "Iso-Surface*Table1*DropDownList2(Surface of Constant)" '( 8))
+(cx-gui-do cx-activate-item "Iso-Surface*Table1*DropDownList2(Surface of Constant)")
+(cx-gui-do cx-activate-item "Iso-Surface*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Iso-Surface*PanelButtons*PushButton2(Cancel)")
+/exit y
+(cx-gui-do cx-activate-item "Question*OK")
+Auto-Transcript Stop Time:  15:42:52, 10 Mar 2023 India Standard Time 
+Total Transcript Time: 3 Hour 1 Minute 30 Second.
